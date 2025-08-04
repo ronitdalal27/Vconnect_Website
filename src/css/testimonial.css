@@ -1,0 +1,177 @@
+/* ✅ Testimonial Section */
+.testimonial-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(40px, 6vw, 60px) clamp(10px, 3vw, 20px);
+  background: #000;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* ✅ Testimonial Tag */
+.testimonial-tag {
+  width: clamp(70px, 12vw, 100px);
+  height: 32.8px;
+  border-radius: 6px;
+  border: 1px solid #222;
+  font-family: Figtree, sans-serif;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.28px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* ✅ Heading */
+.testimonial-heading {
+  font-family: Figtree, sans-serif;
+  font-size: clamp(24px, 4vw, 50px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* ✅ Sub Heading */
+.testimonial-subheading {
+  font-family: Figtree, sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  color: #ccc;
+  text-align: center;
+  margin-bottom: clamp(30px, 5vw, 50px);
+  max-width: 700px;
+}
+
+/* ✅ Cards Container */
+.testimonial-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 30px);
+  max-width: 1100px;
+  margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ✅ Individual Card */
+.testimonial-card {
+  flex: 1 1 280px;
+  max-width: 490px;
+  min-width: 260px;
+  border-radius: 8px;
+  border: 1px solid #222;
+  background: radial-gradient(
+    75% 50% at 98.9% 100%, 
+    rgba(129, 74, 200, 0.30) 0%, 
+    rgba(13, 13, 13, 0.80) 100%
+  );
+  mix-blend-mode: difference;
+  padding: clamp(16px, 2vw, 30px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: clamp(12px, 2vw, 20px);
+  color: #fff;
+  box-sizing: border-box;
+}
+
+/* ✅ Stars */
+.testimonial-stars {
+  display: flex;
+  gap: 6px;
+}
+
+/* ✅ Testimonial Text */
+.testimonial-text {
+  color: #ccc;
+  font-family: Figtree, sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+/* ✅ CEO Info */
+.testimonial-ceo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.testimonial-ceo-img {
+  width: clamp(35px, 5vw, 45px);
+  height: clamp(35px, 5vw, 45px);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-ceo-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.testimonial-ceo-name {
+  color: #fff;
+  font-family: Figtree, sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+}
+
+.testimonial-ceo-title {
+  color: #ccc;
+  font-family: Figtree, sans-serif;
+  font-size: clamp(11px, 1.5vw, 12px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+/* ============================= */
+/* ✅ Responsive Media Queries */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .testimonial-cards-container {
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .testimonial-heading {
+    font-size: clamp(22px, 6vw, 32px);
+  }
+  .testimonial-subheading {
+    font-size: clamp(12px, 4vw, 16px);
+    margin-bottom: 30px;
+  }
+  .testimonial-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 400px) {
+  .testimonial-text {
+    font-size: 14px;
+  }
+  .testimonial-ceo-name {
+    font-size: 14px;
+  }
+}

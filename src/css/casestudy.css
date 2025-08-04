@@ -1,0 +1,291 @@
+.case-study {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: #000;
+  min-height: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ✅ Case Studies Tag */
+.case-study-tag {
+  width: 104px;
+  height: 32.8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: 1px solid #222;
+  color: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* ✅ Heading */
+.case-study-heading {
+  color: #fff;
+  text-align: center;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(26px, 4vw, 50px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  margin-bottom: 16px;
+  padding: 0 10px; /* prevent text overflow on small screens */
+}
+
+/* ✅ Subtext */
+.case-study-subtext {
+  color: #CCC;
+  text-align: center;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(14px, 2vw, 18px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* ============================= */
+/* ✅ Carousel Styles */
+/* ============================= */
+
+.case-study-carousel-wrapper {
+  overflow: hidden;
+  width: 944px;
+  max-width: 100%;
+  margin-top: 50px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.case-study-carousel {
+  display: flex;
+  transition: transform 0.7s ease;
+  width: 100%;
+}
+
+/* ✅ Each Slide */
+.case-slide {
+  background: radial-gradient(
+    50% 50% at 50% 3.4%,
+    rgba(129, 74, 200, 0.3) 0%,
+    rgba(129, 74, 200, 0) 100%
+  );
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+  min-height: 500px;
+  gap: 40px;
+  flex-wrap: wrap; /* ensures elements wrap naturally */
+}
+
+/* ✅ Fixed Image Container */
+.case-slide-image {
+  flex: 1;
+  max-width: 450px;
+  max-height: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* ✅ Right side content */
+.case-slide-content {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  flex: 1;
+  min-width: 40%;
+  box-sizing: border-box;
+}
+
+/* ✅ Heading inside slide */
+.case-slide-heading {
+  color: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(18px, 2.5vw, 23px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+/* ✅ Description text */
+.case-slide-description {
+  color: #CCC;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+/* ✅ Impact section */
+.case-slide-impact span {
+  color: #CCC;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 500;
+}
+
+.case-slide-impact ul {
+  margin: 5px 0 0 15px;
+  padding: 0;
+}
+
+.case-slide-impact li {
+  color: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(14px, 2vw, 16px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+/* ✅ Drag section */
+.case-study-drag {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.drag-text {
+  color: #CCC;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+}
+
+.drag-icon svg {
+  width: 15px;
+  height: auto;
+  opacity: 0.8;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.drag-icon svg:hover {
+  transform: scale(1.1);
+}
+
+/* ============================= */
+/* ✅ Responsive Adjustments */
+/* ============================= */
+
+/* Tablets landscape */
+@media (max-width: 1024px) {
+  .case-slide {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    min-height: auto;
+  }
+
+  .case-slide-image {
+    max-width: 80%;
+    max-height: 260px;
+  }
+
+  .case-slide-content {
+    align-items: center;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* Tablets portrait and large mobiles */
+@media (max-width: 768px) {
+  .case-study {
+    padding: 60px 15px;
+  }
+
+  .case-slide {
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .case-slide-image {
+    max-width: 90%;
+    max-height: 220px;
+    padding: 10px;
+  }
+
+  .case-slide-content {
+    padding: 10px;
+  }
+
+  .case-study-carousel-wrapper {
+    margin-top: 30px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .case-study {
+    padding: 50px 10px;
+  }
+
+  .case-slide-image {
+    max-width: 100%;
+    max-height: 180px;
+    padding: 8px;
+  }
+
+  .case-slide {
+    padding: 15px;
+  }
+
+  .case-slide-content {
+    padding: 8px;
+  }
+
+  .case-study-heading {
+    font-size: clamp(22px, 5vw, 32px);
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 360px) {
+  .case-study-tag {
+    width: 90px;
+    height: 28px;
+    font-size: 11px;
+  }
+
+  .case-slide-heading {
+    font-size: clamp(16px, 5vw, 20px);
+  }
+
+  .case-slide-description,
+  .case-slide-impact li {
+    font-size: 13px;
+  }
+}

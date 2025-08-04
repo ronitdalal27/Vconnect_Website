@@ -1,0 +1,129 @@
+/* ✅ Header Container */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: clamp(48px, 7vh, 65px); /* ✅ Dynamic height */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(8px, 2vw, 16px);
+  background-color: black;
+  border-bottom: 1px solid #222;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* ✅ Logo Container */
+.logo {
+  height: auto;
+  width: auto;
+}
+
+/* ✅ Logo Image */
+.logo-image {
+  height: clamp(24px, 4vh, 40px);
+  max-width: clamp(70px, 15vw, 120px);
+  object-fit: contain;
+}
+
+/* ✅ Navigation Links */
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: clamp(6px, 2vw, 15px);
+  flex-wrap: wrap; /* ✅ allows wrapping on smaller screens */
+}
+
+/* ✅ Navigation Buttons */
+.nav-btn {
+  background-color: black;
+  color: white;
+  border: none;
+  padding: clamp(4px, 1vh, 8px) clamp(8px, 2vw, 14px);
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: clamp(11px, 1.8vw, 15px);
+  line-height: 1.2; /* ✅ keeps text compact */
+  transition: background 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #9b4dff;
+}
+
+/* ============================= */
+/* ✅ Responsive Adjustments */
+/* ============================= */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .header {
+    min-height: clamp(46px, 6.5vh, 60px);
+    padding: 0 clamp(6px, 2vw, 12px);
+  }
+
+  .logo-image {
+    height: clamp(22px, 3.8vh, 35px);
+    max-width: clamp(60px, 14vw, 100px);
+  }
+
+  .nav-links {
+    gap: clamp(5px, 1.5vw, 10px);
+  }
+
+  .nav-btn {
+    padding: clamp(3px, 0.8vh, 6px) clamp(6px, 2vw, 12px);
+    font-size: clamp(10px, 1.7vw, 14px);
+  }
+}
+
+/* Mobiles */
+@media (max-width: 600px) {
+  .header {
+    min-height: clamp(42px, 6vh, 55px);
+  }
+
+  .logo-image {
+    height: clamp(20px, 3.5vh, 30px);
+    max-width: clamp(50px, 12vw, 80px);
+  }
+
+  .nav-links {
+    gap: clamp(4px, 1.2vw, 8px);
+  }
+
+  .nav-btn {
+    padding: clamp(2px, 0.6vh, 5px) clamp(5px, 2vw, 10px);
+    font-size: clamp(9.5px, 1.6vw, 12px);
+  }
+}
+
+/* ✅ Extra Small Screens */
+@media (max-width: 400px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 6px 8px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+    background: black;
+    padding: 6px;
+    border: 1px solid #222;
+    margin-top: 4px;
+  }
+
+  .nav-btn {
+    width: 100%;
+    text-align: left;
+    font-size: clamp(9px, 3vw, 11px);
+    padding: 4px 6px;
+  }
+}

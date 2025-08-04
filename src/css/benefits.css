@@ -1,0 +1,116 @@
+.benefits-section {
+  background: #000;
+  padding: 80px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Top Tag */
+.benefits-tag {
+  width: 75px;
+  height: 32.8px;
+  border-radius: 6px;
+  border: 1px solid #222;
+  color: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(12px, 1.5vw, 14px);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+/* Main Heading */
+.benefits-heading {
+  color: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(24px, 4vw, 50px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -1.5px;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Grid Layout */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
+}
+
+.benefit-box {
+  background: radial-gradient(
+    50% 50% at 50% 3.4%,
+    rgba(129, 74, 200, 0.3) 0%,
+    rgba(129, 74, 200, 0) 100%
+  );
+  border-radius: 8px;
+  border: 1px solid #222;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 190px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Icon */
+.benefit-icon svg {
+  width: 18px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+/* Title */
+.benefit-title {
+  color: #fff;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(18px, 2.3vw, 23px);
+  font-weight: 500;
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+/* Description */
+.benefit-text {
+  color: #ccc;
+  font-family: 'Figtree', sans-serif;
+  font-size: clamp(14px, 1.8vw, 16px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+/* Responsive Padding & Spacing */
+@media (max-width: 768px) {
+  .benefits-section {
+    padding: 60px 15px;
+  }
+  .benefits-heading {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .benefits-section {
+    padding: 50px 10px;
+  }
+  .benefit-box {
+    padding: 16px;
+  }
+}
