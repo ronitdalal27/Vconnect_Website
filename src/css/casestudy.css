@@ -91,24 +91,17 @@
   flex-wrap: wrap; /* ensures elements wrap naturally */
 }
 
-/* ✅ Fixed Image Container */
 .case-slide-image {
-  flex: 1;
-  max-width: 450px;
-  max-height: 300px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex: 1;
+  max-width: 450px;
+  width: 100%;
   padding: 20px;
   box-sizing: border-box;
 }
+
 
 /* ✅ Right side content */
 .case-slide-content {
@@ -122,6 +115,14 @@
   min-width: 40%;
   box-sizing: border-box;
 }
+
+.slide-logo {
+  width: clamp(180px, 30vw, 300px);
+  height: auto;
+  max-height: 240px;
+  object-fit: contain;
+}
+
 
 /* ✅ Heading inside slide */
 .case-slide-heading {
@@ -287,5 +288,12 @@
   .case-slide-description,
   .case-slide-impact li {
     font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slide-logo {
+    width: clamp(140px, 50vw, 200px);
+    max-height: 180px;
   }
 }

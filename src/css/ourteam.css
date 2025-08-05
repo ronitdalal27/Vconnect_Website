@@ -1,0 +1,151 @@
+.ourteam-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 80px 40px;
+  background-color: black;
+}
+
+/* Our Values Tag */
+.ourteam-tag {
+  width: 91px;
+  height: 32.8px;
+  border-radius: 6px;
+  border: var(--stroke-weight-1, 1px) solid var(--color-grey-13, #222);
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-16_8, 16.8px);
+  letter-spacing: var(--letter-spacing--0_28, -0.28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.ourteam-heading {
+  align-self: stretch;
+  text-align: center;
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: 49.414px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-55, 55px);
+  letter-spacing: var(--letter-spacing--2, -2px);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.ourteam-description {
+  align-self: stretch;
+  text-align: center;
+  color: var(--xtract-framer-ai-silver, var(--color-grey-80, #CCC));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-18, 18px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-27, 27px);
+  letter-spacing: var(--letter-spacing--0_36, -0.36px);
+  max-width: 900px;
+  margin: 10px auto 0 auto;
+}
+
+.ourteam-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.team-card {
+  width: 323.33px;
+  height: 435px;
+  border-radius: 8px;
+  border: 1px solid var(--color-grey-13, #222);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #000;
+}
+
+.team-card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.team-card-name {
+  font-size: 23px;
+  font-weight: 500;
+  line-height: 27.6px;
+  letter-spacing: -0.46px;
+}
+
+.team-card-designation {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #aaa; /* lighter color for designation */
+  margin-top: 4px;
+}
+
+.team-card-image {
+  height: 320px;
+  background: none;
+  background-size: 90.945% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-top: 10px; /* or padding-top if image is inside */
+  border-radius: 10px 10px 0 0; /* Optional rounded corners */
+}
+
+.team-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 15px 20px;
+  color: #fff;
+  font-family: var(--font-family-Font-1, Figtree);
+}
+
+.team-card-icon {
+  display: flex;
+  height: 23px;
+  padding: 2.336px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 1;
+}
+
+.team-card-icon a svg {
+  transition: transform 0.3s ease, fill 0.3s ease;
+}
+
+.team-card-icon a:hover svg {
+  transform: scale(1.1);
+  fill: #0A66C2; /* LinkedIn blue */
+  cursor: pointer;
+}
+
+.ourteam-subheading {
+  align-self: stretch;
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  text-align: center;
+
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: 49.609px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-55, 55px); /* 110.866% */
+  letter-spacing: var(--letter-spacing--2, -2px);
+
+  margin-top: 30px; /* optional spacing above */
+}
+

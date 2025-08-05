@@ -1,5 +1,10 @@
 import React from "react";
 import '../css/process.css'; // Import the CSS file
+import img1 from '../images/1.png';
+import img2 from '../images/2.png';
+import img3 from '../images/3.png';
+import img4 from '../images/4.png';
+
 
 function Process() {
   return (
@@ -10,7 +15,7 @@ function Process() {
       </div>
 
       {/* Heading */}
-      <h2>Our Simple, Smart,<br /> and Scalable Process</h2>
+      <h2>Simple, Smart,<br /> and Scalable Process</h2>
 
       {/* Four Containers */}
       <div className="grid">
@@ -24,7 +29,7 @@ function Process() {
 
             {/* Image Container */}
             <div className="image-container">
-              <img src="/images/step1.png" alt="Step 1" />
+              <img src={img1} alt="Step 1" />
             </div>
           </div>
         </div>
@@ -37,7 +42,7 @@ function Process() {
             <p className="desc">Our data team verifies 100% of contacts - role, company, and buying signals. So you only reach real decision-makers.</p>
 
             <div className="image-container">
-              <img src="/images/step2.png" alt="Step 2" />
+              <img src={img2} alt="Step 2" />
             </div>
           </div>
         </div>
@@ -50,7 +55,7 @@ function Process() {
             <p className="desc">Dedicated sales experts run tailored campaigns (email, LinkedIn, calls) to connect with prospects on their terms.</p>
 
             <div className="image-container">
-              <img src="/images/step3.png" alt="Step 3" />
+              <img src={img3} alt="Step 3" />
             </div>
           </div>
         </div>
@@ -63,7 +68,7 @@ function Process() {
             <p className="desc">We send validated leads to your CRM with context (e.g., “Showed interest in your AI product”) for easy follow-up.</p>
 
             <div className="image-container">
-              <img src="/images/step4.png" alt="Step 4" />
+              <img src={img4} alt="Step 4" />
             </div>
           </div>
         </div>

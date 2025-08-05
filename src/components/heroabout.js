@@ -3,7 +3,7 @@ import "../css/heroabout.css";
 
 const HeroAbout = () => {
   return (
-    <section className="about-hero-section">
+    <section className="about-hero-section" id="heroabout">
       {/* Outer Container */}
       <div className="about-hero-content">
         

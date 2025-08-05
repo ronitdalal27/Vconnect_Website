@@ -1,34 +1,45 @@
 import React, { useState } from "react";
-import '../css/faq.css';
+import { useNavigate } from "react-router-dom";
+import "../css/faq.css";
 
 const faqData = [
   {
     question: "What if you don't deliver the leads in the committed time frame i.e 3 months ?",
-    answer: "If we don't deliver within 3 months, we extend the service at no additional cost until we meet the commitment."
+    answer: "If we don't deliver within 3 months, we extend the service at no additional cost until we meet the commitment.",
   },
   {
     question: "Where are you not working on a revenue sharing model ?",
-    answer: "We don't work on a revenue sharing model because our focus is on delivering qualified leads upfront at a fixed cost, giving you full ownership and control without sharing your revenue."
+    answer:
+      "We don't work on a revenue sharing model because our focus is on delivering qualified leads upfront at a fixed cost, giving you full ownership and control without sharing your revenue.",
   },
   {
     question: "Why should we hire you over inhouse sales team ?",
-    answer: "Our AI-driven approach scales lead generation faster and at a lower cost than most in-house teams, while ensuring consistency, data-driven targeting, and measurable ROI."
+    answer:
+      "You should hire us over an in-house sales team because we leverage our deep industry expertise and proven lead generation strategies to rapidly connect you with key decision-makers, driving faster sales growth without the overhead or delays of building an internal team.",
   },
   {
     question: "How do we know if you are not giving the same lead to any other competitor of ours ?",
-    answer: "We guarantee lead exclusivity. Every lead generated for you is locked to your account, and our system prevents duplicate or shared leads across competitors."
-  },
-  {
-    question: "Why don't you do Linkedin marketing ?",
-    answer: "While LinkedIn can work for some businesses, we focus on channels that consistently deliver higher ROI at scale. If LinkedIn is critical for your business, we can discuss a customized approach."
+    answer:
+      "We guarantee lead exclusivity. Every lead generated for you is locked to your account, and our system prevents duplicate or shared leads across competitors.",
   }
+  // {
+  //   question: "Why don't you do Linkedin marketing ?",
+  //   answer:
+  //     "While LinkedIn can work for some businesses, we focus on channels that consistently deliver higher ROI at scale. If LinkedIn is critical for your business, we can discuss a customized approach.",
+  // },
 ];
 
 const Faq = () => {
   const [openIndex, setOpenIndex] = useState(null);
+  const navigate = useNavigate();
 
   const toggleFaq = (index) => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+
+  const handleBookCallClick = () => {
+    navigate("/contact", { state: { scrollTo: "contact" } });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
@@ -68,8 +79,8 @@ const Faq = () => {
         ))}
       </div>
 
-      {/* ✅ Call-To-Action Container */}
-      <div className="cta-container">
+      {/* ✅ CTA Section */}
+      <div className="cta-container" onClick={handleBookCallClick} role="button" tabIndex="0">
         <div className="cta-heading">
           Let us do the Work so<br />you can Scale Faster
         </div>
@@ -80,10 +91,9 @@ const Faq = () => {
 
         <div className="cta-button">
           Book a Call
-          {/* ✅ SVG Icon in top-right */}
           <svg xmlns="http://www.w3.org/2000/svg" className="cta-icon" width="16" height="17" viewBox="0 0 16 17" fill="none">
-            <path d="M4.66168 12.1637L11.3283 5.49707" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
-            <path d="M4.66168 5.49707H11.3283V12.1637" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M4.66168 12.1637L11.3283 5.49707" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M4.66168 5.49707H11.3283V12.1637" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         </div>
       </div>

@@ -78,7 +78,7 @@ function CaseStudy() {
       <div className="case-study-tag">Case Studies</div>
 
       <h2 className="case-study-heading">
-        See How Smart Sales <br />
+        How We <br />
         Transforms Businesses
       </h2>
 
@@ -94,10 +94,9 @@ function CaseStudy() {
         >
           {slides.map((slide) => (
             <div key={slide.id} className="case-slide">
-              <div
-                className="case-slide-image"
-                style={{ backgroundImage: `url(${slide.image})` }}
-              ></div>
+              <div className="case-slide-image">
+                <img src={slide.image} alt="Case Logo" className="slide-logo" />
+              </div>
 
               <div className="case-slide-content">  
                 <h3 className="case-slide-heading">{slide.heading}</h3>

@@ -23,10 +23,12 @@
 
 /* ✅ Logo Image */
 .logo-image {
-  height: clamp(24px, 4vh, 40px);
-  max-width: clamp(70px, 15vw, 120px);
+  height: clamp(42px, 7vh, 60px);
+  max-width: clamp(90px, 18vw, 140px);
   object-fit: contain;
 }
+
+
 
 /* ✅ Navigation Links */
 .nav-links {

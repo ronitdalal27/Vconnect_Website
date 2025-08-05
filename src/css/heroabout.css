@@ -8,6 +8,7 @@
   gap: var(--item-spacing-20, 20px);
   background: #000; /* adjust as needed */
   box-sizing: border-box;
+  position: relative; /* ✅ allows absolute positioning of inner elements */
 }
 
 /* Inner Content */
@@ -79,5 +80,25 @@
 }
 
 .about-tag {
-  margin-bottom: 30px; /* ✅ Adds gap below 'About us' */
+  /* Remove this line */
+  /* position: absolute; */
+
+  border-radius: 6px;
+  border: var(--stroke-weight-1, 1px) solid var(--color-grey-13, #222);
+  height: 32.8px;
+  width: 101px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 16px; /* ✅ Add spacing below */
+
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-16_8, 16.8px);
+  letter-spacing: var(--letter-spacing--0_28, -0.28px);
 }
+

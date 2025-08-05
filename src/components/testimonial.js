@@ -1,24 +1,28 @@
 import React from "react";
 import '../css/testimonial.css'; // Import the CSS file
+import img1 from "../images/himani.png";
+import img2 from "../images/balavishnu.png";
+import img3 from "../images/ajinyka.png";
+
 
 const testimonials = [
   {
-    text: '"AI automation transformed our operations by eliminating repetitive tasks and improving efficiency. Scaling our workflow has never been easier!"',
+    text: `"With AI, we cut manual work and improved accuracy. Our team now focuses on high-impact tasks while automation handles the rest"`,
     name: "James Carter",
     title: "CEO at TechFlow Solutions",
-    image: "/images/ceo1.jpg"
+    image: img1
   },
   {
     text: '"AI-driven insights doubled our sales efficiency. We now engage leads at the right time with smarter, data-backed decisions!"',
     name: "David Reynolds",
     title: "Head of Sales at GrowthPeak",
-    image: "/images/ceo2.jpg"
+    image: img2
   },
   {
     text: '"AI automation transformed our operations by eliminating repetitive tasks and improving efficiency. Scaling our workflow has never been easier!"',
     name: "Michael Carter",
     title: "CTO at VisionWorks",
-    image: "/images/ceo3.jpg"
+    image: img3
   }
 ];
 

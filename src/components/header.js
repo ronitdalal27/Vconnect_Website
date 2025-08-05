@@ -1,31 +1,49 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import '../css/header.css'; // Import the CSS file
+import { Link, useNavigate, useLocation } from "react-router-dom";
+import '../css/header.css';
+import logo from "../images/VconnectLogo.png";
 
 function Header() {
-  const scrollToServices = () => {
-    const section = document.getElementById("services");
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const scrollToHome = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  };
+const handleScrollOrNavigate = (sectionId) => {
+  if (location.pathname === "/") {
+    // ✅ If section is "header", scroll to top
+    if (sectionId === "header") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  } else {
+    navigate("/", { state: { scrollTo: sectionId } });
+  }
+};
+
 
   return (
     <header className="header" id="header">
-      <img src="VconnectLogo.png" alt="Logo" className="logo" />
+      <img
+        src={logo}
+        alt="Logo"
+        className="logo-image"
+        style={{ cursor: "pointer" }}
+        onClick={() => handleScrollOrNavigate("header")}
+      />
       <nav className="nav-links">
-        <Link to="/">
-          <button className="nav-btn" onClick={scrollToHome}>Home</button>
-        </Link>
+        <button className="nav-btn" onClick={() => handleScrollOrNavigate("header")}>
+          Home
+        </button>
         <Link to="/about">
           <button className="nav-btn">About</button>
         </Link>
-        <Link to="/">
-          <button className="nav-btn" onClick={scrollToServices}>Services</button>
+        <Link to="/service">
+        <button className="nav-btn" onClick={() => handleScrollOrNavigate("services")}>
+          Services
+        </button>
         </Link>
         <Link to="/contact">
           <button className="nav-btn">Contact</button>

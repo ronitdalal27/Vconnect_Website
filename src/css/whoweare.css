@@ -1,0 +1,133 @@
+.who-we-are-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--item-spacing-25, 25px);
+  align-self: stretch;
+  padding: 50px 40px;
+  background: none;
+  background-color: black;
+  position: relative;
+}
+
+/* Top small label */
+.who-we-are-label {
+  width: 101px;
+  height: 32.8px;
+  position: absolute;
+  border-radius: 6px;
+  border: var(--stroke-weight-1, 1px) solid var(--color-grey-13, #222);
+  top: 20px; 
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-16_8, 16.8px); /* 120% */
+  letter-spacing: var(--letter-spacing--0_28, -0.28px);
+}
+
+/* Main heading */
+.who-we-are-heading {
+  align-self: stretch;
+  text-align: center;
+
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: 49.414px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-55, 55px); /* 111.304% */
+  letter-spacing: var(--letter-spacing--2, -2px);
+  margin: 30px 0 0; /* space to avoid overlapping label */
+}
+
+/* Description text */
+.who-we-are-description {
+  align-self: stretch;
+  text-align: center;
+
+  color: var(--xtract-framer-ai-silver, var(--color-grey-80, #CCC));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-18, 18px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-27, 27px); /* 150% */
+  letter-spacing: var(--letter-spacing--0_36, -0.36px);
+  margin: 0;
+}
+
+/* ✅ Grid Row */
+.who-we-are-grid-row {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+/* ✅ Individual Grid */
+.who-we-are-grid {
+  width: 303.33px;
+  height: 152.22px;
+  border-radius: 8px;
+  border: var(--stroke-weight-1, 1px) solid var(--color-grey-13, #222);
+
+  display: flex;
+  flex-direction: column;
+  padding: 20px 30px;
+  justify-content: center;
+  align-items: flex-start;
+  gap: var(--item-spacing-10, 10px);
+  flex-shrink: 0;
+
+  background: radial-gradient(75% 50% at 98.9% 100%, rgba(129, 74, 200, 0.30) 0%, rgba(13, 13, 13, 0.80) 100%);
+}
+
+/* Header row (logo + title) */
+.grid-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Logo inside grid */
+.grid-logo {
+  display: flex;
+  height: 25px;
+  padding: 3.125px 2.344px 3.906px 2.344px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: var(--opacity-100, 1);
+}
+
+/* Grid title */
+.grid-title {
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-23, 23px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-27_6, 27.6px); /* 120% */
+  letter-spacing: var(--letter-spacing--0_46, -0.46px);
+  margin: 0;
+}
+
+/* Grid description */
+.grid-description {
+  color: var(--xtract-framer-ai-silver, var(--color-grey-80, #CCC));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-16, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-22_4, 22.4px); /* 140% */
+  letter-spacing: var(--letter-spacing--0_32, -0.32px);
+  margin: 0;
+  align-self: stretch;
+}

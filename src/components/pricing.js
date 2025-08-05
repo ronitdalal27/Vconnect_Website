@@ -1,7 +1,14 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import '../css/pricing.css'; // Import the CSS file
 
 const Pricing = () => {
+  const navigate = useNavigate();
+
+  function handleContactClick() {
+    navigate("/contact", { state: { scrollTo: "contact" } });
+  }
+
   return (
     <section className="pricing-section" id="pricing">
       {/* Pricing Tag */}
@@ -19,7 +26,6 @@ const Pricing = () => {
 
       {/* Pricing Cards */}
       <div className="pricing-cards">
-
         {/* Starter Plan */}
         <div className="pricing-card">
           <div className="card-header">
@@ -27,7 +33,7 @@ const Pricing = () => {
             <span className="plan-name">Starter</span>
           </div>
           <p className="plan-desc">Perfect for startups building brand awareness.</p>
-          <button className="choose-plan">Choose this plan</button>
+          <button className="choose-plan" onClick={handleContactClick}>Choose this plan</button>
           <p className="included-title">What's included:</p>
           <ul className="features-list">
             <li><CheckIcon /> 800-1,000 targeted emails</li>
@@ -46,7 +52,7 @@ const Pricing = () => {
             <span className="plan-name">Growth</span>
         </div>
         <p className="plan-desc">Great for growing businesses scaling outreach.</p>
-        <button className="choose-plan">Choose this plan</button>
+        <button className="choose-plan" onClick={handleContactClick}>Choose this plan</button>
         <p className="included-title">What's included:</p>
         <ul className="features-list">
             <li><CheckIcon /> 4-6 pre-qualified ICP/CXO meetings monthly</li>
@@ -64,7 +70,7 @@ const Pricing = () => {
             <span className="plan-name">Scale</span>
           </div>
           <p className="plan-desc">For enterprises driving maximum conversions.</p>
-          <button className="choose-plan">Choose this plan</button>
+          <button className="choose-plan" onClick={handleContactClick}>Choose this plan</button>
           <p className="included-title">What's included:</p>
           <ul className="features-list">
             <li><CheckIcon /> 10 pre-qualified meetings with dedicated SDR</li>

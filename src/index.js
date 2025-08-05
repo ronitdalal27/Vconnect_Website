@@ -12,6 +12,11 @@ import Testimonial from './components/testimonial';
 import Faq from './components/faq';
 import HeroAbout from './components/heroabout';
 import AboutLogo from './components/aboutlogo';
+import WhoWeAre from './components/whoweare';
+import Values from './components/values';
+import WhyUs from './components/whyus';
+import OurTeam from './components/ourteam';
+import Contact  from './components/contact';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
@@ -28,7 +33,6 @@ root.render(
         element={
           <>
             <Hero />
-            <Service />
             <Process />
             <CaseStudy />
             <Benefits />
@@ -45,9 +49,30 @@ root.render(
           <>
             <HeroAbout />
             <AboutLogo/>
+            <WhoWeAre />
+            <Values />
+            <WhyUs/>
+            <OurTeam/>
           </>
+        }
+      />
+
+       {/* Contact Page */}
+      <Route 
+        path="/contact" 
+        element={
+          <Contact />
         } 
       />
+
+      {/* service Page */}
+      <Route 
+        path="/service" 
+        element={
+          <Service />
+        } 
+      />
+
     </Routes>
 
     {/* Always show Footer */}

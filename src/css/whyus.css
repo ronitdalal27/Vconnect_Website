@@ -1,0 +1,135 @@
+.whyus-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 80px 40px;
+  background-color: black;
+}
+
+/* Our Values Tag */
+.whyus-tag {
+  width: 91px;
+  height: 32.8px;
+  border-radius: 6px;
+  border: var(--stroke-weight-1, 1px) solid var(--color-grey-13, #222);
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-14, 14px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-16_8, 16.8px);
+  letter-spacing: var(--letter-spacing--0_28, -0.28px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.whyus-heading {
+  align-self: stretch;
+  text-align: center;
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: 49.414px;
+  font-style: normal;
+  font-weight: var(--font-weight-600, 600);
+  line-height: var(--line-height-55, 55px);
+  letter-spacing: var(--letter-spacing--2, -2px);
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.whyus-description {
+  align-self: stretch;
+  text-align: center;
+  color: var(--xtract-framer-ai-silver, var(--color-grey-80, #CCC));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-18, 18px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-27, 27px);
+  letter-spacing: var(--letter-spacing--0_36, -0.36px);
+  max-width: 900px;
+  margin: 10px auto 0 auto;
+}
+
+.double-card-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-top: 60px;
+  position: relative;
+}
+
+.stacked-logo-card {
+  width: 390px;
+  height: 287.057px;
+  border-radius: 8px;
+  border: 1px solid #222;
+  padding: 19px 30px 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  flex: 1 0 0;
+  background: radial-gradient(
+    50% 50% at 52.3% 0%,
+    rgba(129, 74, 200, 0.45) 0%,
+    rgba(129, 74, 200, 0.00) 100%
+  );
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+
+.double-card-row .stacked-logo-card:first-child {
+  background: black !important; /* Use !important to override gradient */
+  background-image: none !important;
+}
+
+
+.card-heading {
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-23, 23px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-27_6, 27.6px);
+  letter-spacing: var(--letter-spacing--0_46, -0.46px);
+  margin-bottom: 5px;
+}
+
+.logo-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.logo-wrapper {
+  display: flex;
+  height: 20px;
+  padding: 4.687px 1.56px 3.436px 2.185px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  align-self: stretch;
+}
+
+.logo-wrapper svg {
+  width: 16.255px;
+  height: 11.877px;
+  opacity: var(--opacity-100, 1);
+}
+
+.logo-description {
+  align-self: stretch;
+  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
+  font-family: var(--font-family-Font-1, Figtree);
+  font-size: var(--font-size-16, 16px);
+  font-style: normal;
+  font-weight: var(--font-weight-500, 500);
+  line-height: var(--line-height-22_4, 22.4px);
+  letter-spacing: var(--letter-spacing--0_32, -0.32px);
+}
