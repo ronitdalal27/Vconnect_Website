@@ -16,7 +16,6 @@
   color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
   font-family: var(--font-family-Font-1, Figtree);
   font-size: var(--font-size-14, 14px);
-  font-style: normal;
   font-weight: var(--font-weight-500, 500);
   line-height: var(--line-height-16_8, 16.8px);
   letter-spacing: var(--letter-spacing--0_28, -0.28px);
@@ -32,7 +31,6 @@
   color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
   font-family: var(--font-family-Font-1, Figtree);
   font-size: 49.414px;
-  font-style: normal;
   font-weight: var(--font-weight-600, 600);
   line-height: var(--line-height-55, 55px);
   letter-spacing: var(--letter-spacing--2, -2px);
@@ -46,7 +44,6 @@
   color: var(--xtract-framer-ai-silver, var(--color-grey-80, #CCC));
   font-family: var(--font-family-Font-1, Figtree);
   font-size: var(--font-size-18, 18px);
-  font-style: normal;
   font-weight: var(--font-weight-500, 500);
   line-height: var(--line-height-27, 27px);
   letter-spacing: var(--letter-spacing--0_36, -0.36px);
@@ -54,30 +51,75 @@
   margin: 10px auto 0 auto;
 }
 
+/* Card Grid: manual row control */
 .ourteam-cards-grid {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
+  flex-direction: column;
+  gap: 40px;
   margin-top: 60px;
   position: relative;
 }
 
+.ourteam-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Team Card Common */
 .team-card {
   width: 323.33px;
   height: 435px;
   border-radius: 8px;
   border: 1px solid var(--color-grey-13, #222);
-  position: relative;
+  background: #000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #000;
+  overflow: hidden; /* keeps rounded corners clean */
+  box-sizing: border-box;
 }
 
+/* Shared image container defaults (both large + small inherit) */
+.team-card-image {
+  /* width is set per-size, but shared defaults for background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+/* Large inside container (row 1) */
+/* Use calc so side spacing stays equal if card width changes */
+.team-card-image.large {
+  width: calc(100% - 40px); /* 20px left + 20px right inner spacing */
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto 0 auto; /* top gap + center horizontally */
+  /* keep gradient in CSS as fallback; inline bg from JS will layer on top */
+  background: radial-gradient(84.1% 87.15% at 49.83% 49.95%, #FFF 0%, rgba(186, 176, 232, 0.80) 56.73%);
+}
+
+/* Smaller inside container (row 2 & 3) */
+.team-card-image.small {
+  width: calc(100% - 40px); /* same inner spacing as large */
+  height: 341.461px;
+  display: flex;
+  align-items: flex-start;
+  margin: 10px auto 0 auto; /* same top + center horizontally */
+  background: radial-gradient(84.1% 87.15% at 49.83% 49.95%, #FFF 0%, rgba(186, 176, 232, 0.80) 56.73%);
+}
+
+/* Text container inside footer */
 .team-card-text {
   display: flex;
   flex-direction: column;
+  /* ensure text doesn't butt up against the card edge */
+  padding-left: 8px;
+  padding-right: 8px;
 }
 
 .team-card-name {
@@ -85,24 +127,15 @@
   font-weight: 500;
   line-height: 27.6px;
   letter-spacing: -0.46px;
+  color: #fff;
 }
 
 .team-card-designation {
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  color: #aaa; /* lighter color for designation */
+  color: #aaa;
   margin-top: 4px;
-}
-
-.team-card-image {
-  height: 320px;
-  background: none;
-  background-size: 90.945% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-top: 10px; /* or padding-top if image is inside */
-  border-radius: 10px 10px 0 0; /* Optional rounded corners */
 }
 
 .team-card-footer {
@@ -121,7 +154,6 @@
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  opacity: 1;
 }
 
 .team-card-icon a svg {
@@ -130,7 +162,7 @@
 
 .team-card-icon a:hover svg {
   transform: scale(1.1);
-  fill: #0A66C2; /* LinkedIn blue */
+  fill: #0A66C2;
   cursor: pointer;
 }
 
@@ -138,14 +170,37 @@
   align-self: stretch;
   color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
   text-align: center;
-
   font-family: var(--font-family-Font-1, Figtree);
   font-size: 49.609px;
-  font-style: normal;
   font-weight: var(--font-weight-600, 600);
-  line-height: var(--line-height-55, 55px); /* 110.866% */
+  line-height: var(--line-height-55, 55px);
   letter-spacing: var(--letter-spacing--2, -2px);
-
-  margin-top: 30px; /* optional spacing above */
+  margin-top: 30px;
 }
 
+/* Responsive tweak: stack rows on narrow screens */
+@media (max-width: 900px) {
+  .ourteam-row {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: calc(50% - 20px);
+  }
+
+  .ourteam-cards-grid {
+    gap: 24px;
+  }
+}
+
+@media (max-width: 520px) {
+  .team-card {
+    width: 100%;
+  }
+
+  .team-card-image.large,
+  .team-card-image.small {
+    width: calc(100% - 32px); /* slightly less side padding on tiny screens */
+  }
+}

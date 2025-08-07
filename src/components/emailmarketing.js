@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/leadgeneration.css";
-import LeadHero from "../images/service1.png"; // <- replace with your hero image
+import "../css/emailmarketing.css";
+import LeadHero from "../images/service3.png"; // <- replace with your hero image
 
-function LeadGeneration() {
+function EmailMarketing() {
   const navigate = useNavigate();
 
   // Handler must be inside component (hooks cannot be called conditionally/outside)
@@ -20,24 +20,24 @@ function LeadGeneration() {
 
   const benefits = [
     {
-      title: "Targeted Prospect Acquisition",
-      text: "Reach prospects who align with your business goals, ensuring higher conversion potential."
+      title: "Personalized Engagement",
+      text: "Deliver tailored content that resonates with your audience’s needs and interests."
     },
     {
-      title: "Increased Conversion Rates",
-      text: "Our data-driven approach focuses on high-intent leads, improving your sales outcomes."
+      title: "Higher ROI",
+      text: "Optimize campaigns for better open rates, click-throughs, and conversions."
     },
     {
-      title: "Scalable Campaigns",
-      text: "Flexible strategies that adapt to your budget and growth objectives, from startups to enterprises."
+      title: "Automated Workflows",
+      text: "Save time with automated emails that nurture leads and retain customers."
     },
     {
-      title: "Comprehensive Analytics",
-      text: "Gain insights with detailed reports on lead sources, engagement, and campaign performance."
+      title: "Regulatory Compliance",
+      text: "Stay worry-free with campaigns that meet industry standards."
     },
     {
-      title: "Time-Saving Efficiency",
-      text: "Let us handle lead generation so your team can focus on closing deals."
+      title: "Detailed Analytics",
+      text: "Track performance with clear, actionable insights to improve results."
     }
   ];
 
@@ -62,14 +62,14 @@ function LeadGeneration() {
         </div>
 
         {/* absolute pill that sits below the back link */}
-        <div className="lg-pill">Lead Generation</div>
+        <div className="lg-pill">Email Marketing</div>
       </div>
 
       {/* Main headline block */}
       <header className="lg-hero">
-        <h1 className="lg-title">Unlock a Steady Stream of High-Quality Leads</h1>
+        <h1 className="lg-title">Engage and Convert with Strategic Email Campaigns</h1>
         <p className="lg-subtitle">
-          Transform your business growth with vConnect iDees' expert lead generation services, designed to connect you with prospects who are ready to engage.
+         Drive customer loyalty and boost conversions with vConnect iDees’ expertly crafted email marketing services, tailored to your business goals.
         </p>
       </header>
 
@@ -85,16 +85,16 @@ function LeadGeneration() {
         </div>
 
         <p className="lg-section-desc">
-          At Vconnect, our lead generation service is built to deliver measurable results by targeting the right audience for your business. We start by analyzing your ideal customer profile to understand their needs, behaviors, and pain points. Using a combination of advanced strategies like search engine optimization (SEO), content marketing, social media outreach, and targeted paid advertising, we create customized campaigns that attract high-intent prospects. Our team leverages cutting-edge tools to track performance, ensuring every campaign is optimized for maximum return on investment (ROI). From initial outreach to lead qualification, we handle the entire process, delivering a consistent flow of leads directly to your sales team.
+          Our email marketing service delivers personalized campaigns that connect with your audience and drive measurable results. We start by segmenting your contact list to ensure every email is relevant and targeted, increasing open rates and engagement. Our team designs visually appealing templates and crafts compelling content that resonates with your brand’s voice, from welcome series to promotional campaigns. We use advanced analytics to monitor performance, optimize subject lines, and refine strategies for maximum ROI. Plus, we ensure full compliance with email regulations like CAN-SPAM, so you can focus on growth without legal worries.
         </p>
 
         <p className="lg-section-desc">
-          We also provide detailed analytics and reporting, giving you full visibility into campaign performance and lead quality. Whether you’re a small business looking to grow or an established company seeking to expand your reach, our scalable solutions are tailored to fit your unique goals and budget.
+          Our automated workflows nurture leads at every stage of the customer journey, from initial interest to repeat purchases, making your marketing efforts efficient and effective.
         </p>
       </section>
 
       {/* Benefits heading */}
-      <h2 className="lg-benefits-title">Benefits of Our Lead Generation Services</h2>
+      <h2 className="lg-benefits-title">Benefits of Our Email Marketing Services</h2>
 
       {/* Repeated benefit blocks (5 times) */}
       <section className="lg-benefits-list">
@@ -110,7 +110,7 @@ function LeadGeneration() {
       <section className="lg-why">
         <h3 className="lg-why-title">Why Choose vConnect iDees?</h3>
         <p className="lg-why-desc">
-          Our team combines industry expertise with a client-first approach, ensuring every campaign is tailored to your specific needs. We stay ahead of market trends, using the latest tools and strategies to keep your lead pipeline full. With vConnect iDees, you’re not just getting leads—you’re building a foundation for long-term business growth.
+          We combine creativity with data-driven precision to deliver email campaigns that get results. Our team stays updated on the latest email marketing trends, ensuring your campaigns stand out in crowded inboxes. With vConnect iDees, you’re partnering with experts dedicated to growing your business through effective email strategies.
         </p>
       </section>
 
@@ -123,7 +123,7 @@ function LeadGeneration() {
         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleBookCallClick(e); }}
       >
         <div className="cta-heading">
-         Ready to grow your pipeline with<br/> qualified leads?
+         Boost your business with<br/> powerful email campaigns.
         </div>
 
         <div className="cta-subheading">
@@ -142,4 +142,4 @@ function LeadGeneration() {
   );
 }
 
-export default LeadGeneration;
+export default EmailMarketing;

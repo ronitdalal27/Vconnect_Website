@@ -1,4 +1,4 @@
-.contact-section {
+.career-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,7 +8,6 @@
   box-sizing: border-box;
 }
 
-/* ✅ Tag */
 .contact-tag {
   width: clamp(50px, 10vw, 66px);
   height: 32.8px;
@@ -27,7 +26,6 @@
   margin-bottom: 20px;
 }
 
-/* ✅ Heading */
 .contact-heading {
   font-family: Figtree, sans-serif;
   font-size: clamp(24px, 4vw, 50px);
@@ -38,7 +36,6 @@
   margin-bottom: 10px;
 }
 
-/* ✅ Subheading */
 .contact-subheading {
   font-family: Figtree, sans-serif;
   font-size: clamp(14px, 2vw, 18px);
@@ -51,10 +48,9 @@
   max-width: 700px;
 }
 
-/* ✅ Form */
 .contact-form {
-  width: 100%;
-  max-width: 700px;
+  width: 700px;
+  max-width: 100%;
   border-radius: 12px;
   border: 1px solid #222;
   background: rgba(13, 13, 13, 0.8);
@@ -65,29 +61,23 @@
   color: #fff;
 }
 
-/* ✅ Input Rows */
 .form-row {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   position: relative;
-  flex-wrap: wrap;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  flex: 1;
-  min-width: 280px; /* Prevents squishing on small screens */
+  width: 100%;
 }
-
 
 .form-group label {
   font-family: Figtree, sans-serif;
   font-size: 16px;
   font-weight: 500;
-  line-height: 22.4px;
-  letter-spacing: -0.32px;
   margin-bottom: 6px;
 }
 
@@ -99,16 +89,12 @@
   color: #ccc;
   font-family: Figtree, sans-serif;
   font-size: 16px;
-  font-weight: 500;
-  letter-spacing: -0.32px;
   padding: 10px 12px;
 }
 
-/* ✅ Submit Button */
 .submit-btn {
   display: flex;
-  width: 100%;
-  max-width: 660px;
+  width: 660px;
   padding: 11px 18px 12px;
   justify-content: center;
   align-items: center;
@@ -122,4 +108,7 @@
   border: none;
   cursor: pointer;
   margin: 0 auto;
+}
+.form-group.full-width {
+  width: 100%;
 }

@@ -17,6 +17,10 @@ import Values from './components/values';
 import WhyUs from './components/whyus';
 import OurTeam from './components/ourteam';
 import Contact  from './components/contact';
+import LeadGeneration from './components/leadgeneration';
+import AppointmentSetting from "./components/appointmentsetting";
+import EmailMarketing from "./components/emailmarketing";
+import Career from './components/career';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './index.css';
 
@@ -72,6 +76,15 @@ root.render(
           <Service />
         } 
       />
+
+      {/* Services page (plural) — matches Header and card Links */}
+      <Route path="/services" element={<Service />} />
+
+      <Route path="/services/lead-generation" element={<LeadGeneration />} />
+      <Route path="/services/appointment-setting" element={<AppointmentSetting />} />
+      <Route path="/services/email-marketing" element={<EmailMarketing />} />
+
+      <Route path="/career" element={<Career />} />
 
     </Routes>
 

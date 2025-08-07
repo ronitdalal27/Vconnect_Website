@@ -6,22 +6,25 @@ function Footer() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const scrollOrNavigate = (sectionId, page = "/") => {
-    if (location.pathname === page) {
-      setTimeout(() => {
-        if (sectionId === "top") {
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        } else {
-          const section = document.getElementById(sectionId);
-          if (section) {
-            section.scrollIntoView({ behavior: "smooth" });
-          }
+  const scrollOrNavigate = (sectionId = null, page = "/") => {
+  if (location.pathname === page) {
+    // Scroll only if on the same page
+    setTimeout(() => {
+      if (!sectionId || sectionId === "top") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth" });
         }
-      }, 100);
-    } else {
-      navigate(page, { state: { scrollTo: sectionId } });
-    }
+      }
+    }, 100);
+  } else {
+    // For pages like /career, /contact, /about, just navigate
+    navigate(page);
+  }
   };
+
 
   return (
     <footer className="footer" id="footer">
@@ -54,6 +57,7 @@ function Footer() {
             <p className="footer-item" onClick={() => scrollOrNavigate("top", "/")}>Home</p>
             <p className="footer-item" onClick={() => scrollOrNavigate("heroabout", "/about")}>About</p>
             <p className="footer-item" onClick={() => scrollOrNavigate("contact", "/contact")}>Contact</p>
+            <p className="footer-item" onClick={() => navigate("/career")}>Career</p>
           </div>
 
           {/* Column 3 - Socials */}
@@ -91,7 +95,7 @@ function Footer() {
         </div>
       </div>
 
-      <p className="footer-copy">&copy; {new Date().getFullYear()} Vconnect. All rights reserved.</p>
+      <p className="footer-copy">&copy; {new Date().getFullYear()} vConnect. All rights reserved.</p>
     </footer>
   );
 }

@@ -1,9 +1,9 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../css/leadgeneration.css";
-import LeadHero from "../images/service1.png"; // <- replace with your hero image
+import "../css/appointmentsetting.css";
+import LeadHero from "../images/service2.png"; // <- replace with your hero image
 
-function LeadGeneration() {
+function AppointmentSetting() {
   const navigate = useNavigate();
 
   // Handler must be inside component (hooks cannot be called conditionally/outside)
@@ -20,24 +20,24 @@ function LeadGeneration() {
 
   const benefits = [
     {
-      title: "Targeted Prospect Acquisition",
-      text: "Reach prospects who align with your business goals, ensuring higher conversion potential."
+      title: "Focus on Closing",
+      text: "Free up your sales team to focus on deals, not scheduling."
     },
     {
-      title: "Increased Conversion Rates",
-      text: "Our data-driven approach focuses on high-intent leads, improving your sales outcomes."
+      title: "Qualified Meetings",
+      text: "Connect with pre-vetted prospects who are ready to engage."
     },
     {
-      title: "Scalable Campaigns",
-      text: "Flexible strategies that adapt to your budget and growth objectives, from startups to enterprises."
+      title: "Seamless CRM Integration",
+      text: "Streamline your workflow with real-time updates and tracking."
     },
     {
-      title: "Comprehensive Analytics",
-      text: "Gain insights with detailed reports on lead sources, engagement, and campaign performance."
+      title: "Professional Outreach",
+      text: "Build trust with prospects through polished, personalized communication"
     },
     {
-      title: "Time-Saving Efficiency",
-      text: "Let us handle lead generation so your team can focus on closing deals."
+      title: "Scalable Solutions",
+      text: "Adaptable services that grow with your business needs."
     }
   ];
 
@@ -59,17 +59,17 @@ function LeadGeneration() {
             </svg>
           </span>
           <span className="lg-back-text">Go back</span>
-        </div>
+        </div>.
 
         {/* absolute pill that sits below the back link */}
-        <div className="lg-pill">Lead Generation</div>
+        <div className="lg-pill">Appointment Setting</div>
       </div>
 
       {/* Main headline block */}
       <header className="lg-hero">
-        <h1 className="lg-title">Unlock a Steady Stream of High-Quality Leads</h1>
+        <h1 className="lg-title">Close More Deals with Seamless Appointment Scheduling</h1>
         <p className="lg-subtitle">
-          Transform your business growth with vConnect iDees' expert lead generation services, designed to connect you with prospects who are ready to engage.
+          Save time and boost your sales efficiency with vConnect iDees’ professional appointment setting services, designed to connect you with qualified prospects.
         </p>
       </header>
 
@@ -85,16 +85,16 @@ function LeadGeneration() {
         </div>
 
         <p className="lg-section-desc">
-          At Vconnect, our lead generation service is built to deliver measurable results by targeting the right audience for your business. We start by analyzing your ideal customer profile to understand their needs, behaviors, and pain points. Using a combination of advanced strategies like search engine optimization (SEO), content marketing, social media outreach, and targeted paid advertising, we create customized campaigns that attract high-intent prospects. Our team leverages cutting-edge tools to track performance, ensuring every campaign is optimized for maximum return on investment (ROI). From initial outreach to lead qualification, we handle the entire process, delivering a consistent flow of leads directly to your sales team.
+          vConnect iDees’ appointment setting service takes the hassle out of scheduling by managing the entire process, from outreach to booking. We start by understanding your sales goals and target audience, then use personalized communication to engage prospects and qualify their interest. Our team handles initial outreach, follow-ups, and calendar coordination, ensuring your sales team meets with decision-makers ready to discuss your solutions. We integrate seamlessly with your CRM system, providing real-time updates and detailed reporting to keep your pipeline organized. Our proven qualification techniques ensure that every appointment is with a prospect who fits your ideal customer profile.
         </p>
 
         <p className="lg-section-desc">
-          We also provide detailed analytics and reporting, giving you full visibility into campaign performance and lead quality. Whether you’re a small business looking to grow or an established company seeking to expand your reach, our scalable solutions are tailored to fit your unique goals and budget.
+          Whether you’re targeting small businesses or enterprise clients, our service is designed to scale with your needs, delivering consistent results without overwhelming your team.
         </p>
       </section>
 
       {/* Benefits heading */}
-      <h2 className="lg-benefits-title">Benefits of Our Lead Generation Services</h2>
+      <h2 className="lg-benefits-title">Benefits of Our Appointment Setting Services</h2>
 
       {/* Repeated benefit blocks (5 times) */}
       <section className="lg-benefits-list">
@@ -123,7 +123,7 @@ function LeadGeneration() {
         onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleBookCallClick(e); }}
       >
         <div className="cta-heading">
-         Ready to grow your pipeline with<br/> qualified leads?
+        Let us handle the scheduling so<br/> you can focus on winning clients.
         </div>
 
         <div className="cta-subheading">
@@ -142,4 +142,4 @@ function LeadGeneration() {
   );
 }
 
-export default LeadGeneration;
+export default AppointmentSetting;

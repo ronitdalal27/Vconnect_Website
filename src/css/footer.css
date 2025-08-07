@@ -41,8 +41,10 @@
   width: clamp(180px, 20vw, 262px);
   height: auto;
   aspect-ratio: 262 / 59;
-  background: url('../images/VconnectLogo.png') black 50% / cover no-repeat;
+  background: url('../images/FooterLogo.png') center / contain no-repeat;
+  background-color: transparent; /* ✅ Remove the black base */
 }
+
 
 /* Text below logo */
 .footer-text {

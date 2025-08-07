@@ -34,23 +34,33 @@
 .lg-pill {
   position: absolute;
   left: 0;
-  bottom: 0px;
-  width: 125px;
-  height: 32.8px;
+  bottom: 0;
+
+  /* Auto-size to text */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 4px 14px; /* top/bottom 4px, left/right 14px */
   border-radius: 6px;
   border: 1px solid #222;
-  display: flex;
-  align-items: center;
-  padding-left: 10px;
-  box-sizing: border-box;
+  
   background: rgba(0,0,0,0.25);
   color: var(--white-solid);
   font-family: var(--font-1);
   font-size: 14px;
   font-weight: 500;
-  line-height: 16.8px;
+  line-height: 1; /* ✅ prevent extra vertical spacing */
   letter-spacing: -0.28px;
+  white-space: nowrap;
+  
+  width: 32.8px;
+  height: 153px;
   z-index: 11;
+}
+
+.lg-pill * {
+  line-height: 1;
 }
 
 /* back button stays inline and above hero */

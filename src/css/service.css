@@ -3,120 +3,169 @@
   --white-10: rgba(255,255,255,0.10);
   --grey-13: #222;
   --font-1: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+  /* pill width — adjust if you add longer labels */
+  --pill-width: 180px;
 }
 
-/* Section header */
+/* Section wrapper */
 .services-wrapper {
-  padding: 40px 24px;
-  text-align: center;
-  color: var(--white-solid);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 40px;
   background-color: black;
+  color: var(--white-solid);
 }
-.services-title {
-  margin: 0;
+
+/* Header (kept similar to ourteam) */
+.services-header { text-align: center; max-width: 1000px; }
+.services-tag {
+  width: 91px;
+  height: 32.8px;
+  border-radius: 6px;
+  border: 1px solid var(--grey-13);
+  color: var(--white-solid);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+  font-family: var(--font-1);
   font-size: 14px;
   font-weight: 500;
 }
-.services-main-heading {
-  margin: 8px 0 8px;
-  font-size: 28px;
+.services-heading {
+  color: var(--white-solid);
+  font-family: var(--font-1);
+  font-size: 42px;
   font-weight: 600;
+  line-height: 48px;
+  margin: 8px 0 6px;
 }
 .services-description {
-  margin: 0 0 32px;
+  max-width: 900px;
+  margin: 0 auto 40px;
   color: rgba(255,255,255,0.85);
+  font-family: var(--font-1);
+  font-size: 18px;
+  font-weight: 500;
 }
 
-/* Row container: single row of 3 cards */
-.services-row {
+/* Cards grid (matches ourteam-cards-grid) */
+.services-cards-grid {
   display: flex;
-  gap: 24px;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: flex-start; /* align from top */
-  flex-wrap: nowrap;
-  overflow-x: auto; /* allow horizontal scroll if smaller screens */
-  padding-bottom: 10px;
+  gap: 30px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
 }
 
-/* Link wrapper to make whole card clickable */
+/* Make the entire Link clickable area cover the card */
 .service-card-link {
   text-decoration: none;
-  outline: none;
+  color: inherit;
+  display: block;       /* ensures full-card clickable */
 }
 
-/* Card base */
-/* Adjust card structure */
+/* Card (same size as your team cards) */
 .service-card {
+  width: 323.33px;        /* same as team-card */
+  height: 435px;         /* same as team-card */
+  border-radius: 8px;
+  border: 1px solid var(--grey-13);
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* align content to left */
-  padding: 16px;
-  height: auto;
+  justify-content: flex-start;
+  background: #000;
+  overflow: hidden;
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
-/* hover effect */
-.service-card:hover{
+/* hover */
+.service-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
 
-/* Image block */
-/* New stacking order: image → pill → heading */
-.card-image {
+/* Image area — same visual treatment as team-card-image */
+.service-card-image {
+  height: 320px;
   width: 100%;
-  height: 300px;
+  background-size: cover;     /* changed to cover for better aspect handling */
+  background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
-  border-radius: 12px;
-  margin-bottom: 20px;
+  margin-top: 0;
+  border-radius: 8px 8px 0 0;
 }
 
-/* Pill */
-.card-pill {
-  margin-bottom: 12px;
-  color: #FFF;
+/* Footer area that contains pill + heading */
+.service-card-footer {
   display: flex;
-  justify-content: flex-start; /* text to left inside pill */
-  padding: 0 8px; /* small padding inside pill */
+  align-items: flex-start;
+  padding: 14px 16px;
+  color: #fff;
+  font-family: var(--font-1);
+  height: 115px; /* leaves space for the two-line heading and pill */
+  box-sizing: border-box;
 }
-/* Card content */
-.card-content {
-  position: static;
+
+/* Left column text inside footer */
+.service-card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   width: 100%;
-  text-align: left; /* left align heading text */
-  margin-top: 12px;
 }
-/* Heading style per your typography details */
-/* Heading */
-.card-heading {
-  margin: 0;
+
+/* Pill style (left aligned) — same width for all pills */
+.service-card-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start; /* left align text inside pill */
+  padding: 0 14px;
+  height: 32.8px;
+  border-radius: 6px;
+  border: 1px solid var(--grey-13);
+  background: rgba(0,0,0,0.25);
   color: var(--white-solid);
   font-family: var(--font-1);
-  font-size: 23px;
+  font-size: 14px;
   font-weight: 500;
-  line-height: 27.6px;
+  white-space: nowrap; /* keeps text in one line */
+  width: var(--pill-width); /* unified width */
+  box-sizing: border-box;
+}
+
+/* Heading left aligned and matches your typography */
+.service-card-heading {
+  color: var(--white-solid);
+  font-family: var(--font-1);
+  font-size: 20px; /* slightly smaller to fit two lines nicely */
+  font-weight: 500;
+  line-height: 26px;
   letter-spacing: -0.46px;
-  text-align: left; /* ensure left alignment */
+  text-align: left;
+  margin-top: 4px;
+  white-space: pre-line; /* supports explicit newlines if any */
 }
 
-/* Make sure image doesn't cover pill or heading visually */
-.service-card .card-image{
-  z-index: 0;
-}
-
-/* Accessibility focus states */
+/* Accessibility focus state for keyboard users */
 .service-card-link:focus .service-card,
 .service-card-link:focus-visible .service-card {
-  box-shadow: 0 0 0 4px rgba(100,150,255,0.16);
+  outline: 3px solid rgba(100,150,255,0.12);
   transform: translateY(-4px);
-  outline: none;
 }
 
-/* Responsive fallback */
-@media (max-width: 1400px) {
-  .services-row { gap: 16px; }
+/* Responsive: on smaller screens show 1 or 2 columns */
+@media (max-width: 1100px) {
+  .services-cards-grid { gap: 20px; }
 }
-@media (max-width: 1360px) {
-  .services-row { flex-wrap: wrap; justify-content: center; }
-  .service-card { margin-bottom: 20px; }
+@media (max-width: 900px) {
+  .service-card { width: calc(50% - 20px); }
+}
+@media (max-width: 600px) {
+  .service-card { width: 100%; }
 }

@@ -8,19 +8,19 @@ import img3 from "../images/ajinyka.png";
 const testimonials = [
   {
     text: `"With AI, we cut manual work and improved accuracy. Our team now focuses on high-impact tasks while automation handles the rest"`,
-    name: "James Carter",
+    name: "Himani Chandorkar",
     title: "CEO at TechFlow Solutions",
     image: img1
   },
   {
     text: '"AI-driven insights doubled our sales efficiency. We now engage leads at the right time with smarter, data-backed decisions!"',
-    name: "David Reynolds",
+    name: "Balavishnu",
     title: "Head of Sales at GrowthPeak",
     image: img2
   },
   {
     text: '"AI automation transformed our operations by eliminating repetitive tasks and improving efficiency. Scaling our workflow has never been easier!"',
-    name: "Michael Carter",
+    name: "Ajinkya Kulkarni",
     title: "CTO at VisionWorks",
     image: img3
   }

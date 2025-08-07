@@ -1,3 +1,4 @@
+// Hero.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/hero.css';
@@ -5,11 +6,10 @@ import '../css/hero.css';
 function Hero() {
   const navigate = useNavigate();
 
+  // Navigate to the dedicated service page (singular) since the services section
+  // is not present on the home DOM.
   function scrollToServices() {
-    const servicesSection = document.getElementById("services");
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: "smooth" });
-    }
+    navigate("/service");
   }
 
   function handleContactClick() {

@@ -79,7 +79,7 @@ const Faq = () => {
         ))}
       </div>
 
-      {/* ✅ CTA Section */}
+      {/* CTA Section */}
       <div className="cta-container" onClick={handleBookCallClick} role="button" tabIndex="0">
         <div className="cta-heading">
           Let us do the Work so<br />you can Scale Faster

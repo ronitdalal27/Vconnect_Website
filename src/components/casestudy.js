@@ -61,7 +61,7 @@ const slides = [
 function CaseStudy() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // ✅ Auto-slide every 10 seconds
+  // Auto-slide every 10 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % slides.length);
@@ -69,7 +69,7 @@ function CaseStudy() {
     return () => clearInterval(interval);
   }, []);
 
-  // ✅ Handle manual navigation
+  // Handle manual navigation
   const nextSlide = () => setCurrentIndex(prev => (prev + 1) % slides.length);
   const prevSlide = () => setCurrentIndex(prev => (prev - 1 + slides.length) % slides.length);
 
@@ -86,7 +86,7 @@ function CaseStudy() {
         See how streamlines operations boosts sales and drives growth.
       </p>
 
-      {/* ✅ Carousel Container */}
+      {/* Carousel Container */}
       <div className="case-study-carousel-wrapper">
         <div
           className="case-study-carousel"
@@ -116,7 +116,7 @@ function CaseStudy() {
         </div>
       </div>
 
-      {/* ✅ Drag to Explore */}
+      {/* Drag to Explore */}
       <div className="case-study-drag">
         <span className="drag-icon left" onClick={prevSlide}>
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14" fill="none">

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import emailjs from "@emailjs/browser";
 import "../css/contact.css";
 
 const Contact = () => {
@@ -10,7 +11,9 @@ const Contact = () => {
         lastName: "",
         email: "",
         mobile: "",
-        plan: ""
+        companyName: "",
+        companyWebsite: "",
+        message: ""
     });
 
     useEffect(() => {
@@ -27,43 +30,41 @@ const Contact = () => {
         setFormData(prev => ({ ...prev, [name]: value }));
     };
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = (e) => {
         e.preventDefault();
 
-        const scriptURL = "https://script.google.com/macros/s/AKfycbx1m5T0QR3GX-_cGuHf2SzDCbkL8YtJ4Q1ZeZmS55whmSUjc2k0-oS57bZKjDd2iI2o_Q/exec";
+        const serviceID = "service_joiofc8";       // Replace with your EmailJS Service ID
+        const templateID = "template_bu80nme";     // Replace with your EmailJS Template ID
+        const publicKey = "uEKfK6zG5oBjp9BbR";       // Replace with your EmailJS Public Key
 
-        // Create form data in the format Google Apps Script expects
-        const form = new FormData();
-        form.append("firstName", formData.firstName);
-        form.append("lastName", formData.lastName);
-        form.append("email", formData.email);
-        form.append("mobile", formData.mobile);
-        form.append("plan", formData.plan);
+        const templateParams = {
+            firstName: formData.firstName,
+            lastName: formData.lastName || "N/A",
+            email: formData.email,
+            mobile: formData.mobile,
+            companyName: formData.companyName,
+            companyWebsite: formData.companyWebsite || "N/A",
+            message: formData.message || "No message provided"
+        };
 
-        try {
-            const response = await fetch(scriptURL, {
-                method: "POST",
-                body: form
-            });
-
-            if (response.ok) {
-                alert("Form submitted successfully!");
-
-                // Clear form
+        emailjs.send(serviceID, templateID, templateParams, publicKey)
+            .then((response) => {
+                console.log("SUCCESS!", response.status, response.text);
+                alert("Form submitted and email sent successfully!");
                 setFormData({
                     firstName: "",
                     lastName: "",
                     email: "",
                     mobile: "",
-                    plan: ""
+                    companyName: "",
+                    companyWebsite: "",
+                    message: ""
                 });
-            } else {
-                alert("Submission failed. Please try again.");
-            }
-        } catch (error) {
-            console.error("Error submitting form:", error);
-            alert("Failed to submit form. Please try again.");
-        }
+            })
+            .catch((error) => {
+                console.error("FAILED...", error);
+                alert("Failed to send email. Please try again.");
+            });
     };
 
     return (
@@ -76,7 +77,7 @@ const Contact = () => {
             </p>
 
             <form className="contact-form" onSubmit={handleSubmit}>
-                {/* Row 1: First Name / Last Name */}
+                {/* Row 1 */}
                 <div className="form-row">
                     <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
@@ -97,12 +98,11 @@ const Contact = () => {
                             value={formData.lastName}
                             onChange={handleChange}
                             placeholder="Doe"
-                            required
                         />
                     </div>
                 </div>
 
-                {/* Row 2: Email / Mobile */}
+                {/* Row 2 */}
                 <div className="form-row">
                     <div className="form-group">
                         <label htmlFor="email">Email</label>
@@ -128,27 +128,44 @@ const Contact = () => {
                     </div>
                 </div>
 
-                {/* Row 3: Plan selection */}
-                <div className="form-row plan-row">
-                    <label className="plan-label">Choose a Plan:</label>
-                    <div className="radio-group">
-                        {["Starter", "Growth", "Scale", "Custom"].map((option) => (
-                            <label key={option} className="radio-option">
-                                <input
-                                    type="radio"
-                                    name="plan"
-                                    value={option.toLowerCase()}
-                                    checked={formData.plan === option.toLowerCase()}
-                                    onChange={handleChange}
-                                    required
-                                />
-                                {option}
-                            </label>
-                        ))}
+                {/* Row 3 */}
+                <div className="form-row">
+                    <div className="form-group">
+                        <label htmlFor="companyName">Company Name</label>
+                        <input
+                            type="text"
+                            name="companyName"
+                            value={formData.companyName}
+                            onChange={handleChange}
+                            placeholder="Acme Inc."
+                        />
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="companyWebsite">Company Website</label>
+                        <input
+                            type="url"
+                            name="companyWebsite"
+                            value={formData.companyWebsite}
+                            onChange={handleChange}
+                            placeholder="https://acme.com"
+                        />
                     </div>
                 </div>
 
-                {/* Submit Button */}
+                {/* Row 4: Message */}
+                <div className="form-row">
+                    <div className="form-group full-width">
+                        <label htmlFor="message">Message</label>
+                        <textarea
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            placeholder="Write your message here..."
+                            rows={4}
+                        />
+                    </div>
+                </div>
+
                 <button type="submit" className="submit-btn">Submit Form</button>
             </form>
         </div>

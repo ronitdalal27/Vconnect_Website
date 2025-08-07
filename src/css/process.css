@@ -71,7 +71,7 @@
   max-width: 400px;   /* was 440px → smaller for better fit */
   padding: clamp(14px, 1.8vw, 22px); /* less internal padding to make boxes shorter */
   background: radial-gradient(
-    50% 50% at 50% 96.6%,
+    50% 50% at 50% 3.4%,
     rgba(129, 74, 200, 0.3) 0%,
     rgba(129, 74, 200, 0) 100%
   );
@@ -144,6 +144,7 @@
 
 .process .image-container img {
   max-width: 100%;
+  max-height: clamp(200px, 24vh, 320px);
   height: auto;
   object-fit: contain;
   display: block;
