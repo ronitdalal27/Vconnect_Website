@@ -183,6 +183,7 @@ html, body {
 .logo-track {
   display: inline-flex;
   animation: scroll-left 20s linear infinite;
+  animation: scroll-right 20s linear infinite;
 }
 
 .logo-track img {
@@ -199,10 +200,6 @@ html, body {
   100% {
     transform: translateX(-50%);
   }
-}
-
-.logo-track {
-  animation: scroll-right 20s linear infinite;
 }
 
 @keyframes scroll-right {

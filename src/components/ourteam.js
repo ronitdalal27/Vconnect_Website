@@ -15,7 +15,7 @@ const teamMembers = [
   { name: "Ashish Yadav", designation: "Heading Team & Client Engagement Head", image: AshishImage, linkedin: "https://www.linkedin.com/in/ashish-yadav-7b9701103/" },
   { name: "Muskan Nigam", designation: "Team Leader & Project Coordinator", image: MuskanImage, linkedin: "https://www.linkedin.com/in/muskan-nigam-717aaa1b3/" },
   { name: "Ankit Kharatmal", designation: "Business Development Manager", image: AniketImage, linkedin: "https://www.linkedin.com/in/ankit-kharatmal-359815140/" },
-  { name: "Mehrishi Tiwari", designation: "HR Manager", image: MehrishiImage, linkedin: "https://www.linkedin.com/in/mehrishi-tiwari-a2b191237/"},
+  { name: "Mehrishi Tiwari", designation: "HR Manager", image: MehrishiImage, linkedin: "https://www.linkedin.com/in/mehrishi-tiwari-a2b191237/" },
   { name: "Arpan Chavan", designation: "UI UX Designer", image: ArpanImage, linkedin: "https://www.linkedin.com/in/arpan-chavan/" },
 ];
 

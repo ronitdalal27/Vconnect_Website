@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
 import Header from './components/header';
 import Hero from './components/hero';
 import Footer from './components/footer'; 
@@ -23,8 +22,8 @@ import AppointmentSetting from "./components/appointmentsetting";
 import EmailMarketing from "./components/emailmarketing";
 import Career from './components/career';
 import ChannelPartner from './components/channelpartner';
-import './index.css';
 import ScrollToTop from './components/scrolltotop';
+import './index.css';
 
 function RootApp() {
   // Disable browser's automatic scroll restoration
