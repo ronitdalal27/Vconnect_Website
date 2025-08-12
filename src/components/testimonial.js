@@ -2,26 +2,26 @@ import React from "react";
 import '../css/testimonial.css'; // Import the CSS file
 import img1 from "../images/himani.png";
 import img2 from "../images/balavishnu.png";
-import img3 from "../images/ajinyka.png";
+import img3 from "../images/AnkitShah.png";
 
 
 const testimonials = [
   {
-    text: `"With AI, we cut manual work and improved accuracy. Our team now focuses on high-impact tasks while automation handles the rest"`,
+    text: `"The team demonstrates commendable consistency, sincerity & passion to get results for their clients."`, 
     name: "Himani Chandorkar",
-    title: "CEO at TechFlow Solutions",
+    title: "CoFounder | Etude 360 & Acumen 360",
     image: img1
   },
   {
-    text: '"AI-driven insights doubled our sales efficiency. We now engage leads at the right time with smarter, data-backed decisions!"',
+    text: '"They have been very prompt in understanding the Ideal customer profile,& arranging meetings."',
     name: "Balavishnu",
-    title: "Head of Sales at GrowthPeak",
+    title: "Founder of TechnoTackle",
     image: img2
   },
   {
-    text: '"AI automation transformed our operations by eliminating repetitive tasks and improving efficiency. Scaling our workflow has never been easier!"',
-    name: "Ajinkya Kulkarni",
-    title: "CTO at VisionWorks",
+    text: '"From understanding your needs to connecting you with the right customers, the vConnect team is best."',
+    name: "Ankit Shah",
+    title: "CEO & Founder | Webtual",
     image: img3
   }
 ];

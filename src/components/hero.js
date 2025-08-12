@@ -2,6 +2,14 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import '../css/hero.css';
+import img2  from '../images/company2.png';
+import img3 from '../images/comapny3.png';
+import img4 from '../images/comapny4.png';
+import img5 from '../images/company5.png';
+import img6 from '../images/company6.png';
+import img7 from '../images/company7.png';
+import img8 from '../images/company8.png';
+
 
 function Hero() {
   const navigate = useNavigate();
@@ -17,7 +25,7 @@ function Hero() {
   }
 
   return (
-    <section className="hero">
+    <section className="hero" id="hero">
       <div className="star-bg"></div>
 
       <div className="hero-content">
@@ -47,6 +55,28 @@ function Hero() {
           </button>
         </div>
       </div>
+
+      <div className="logo-ribbon">
+        <div className="logo-track">
+          {/* Repeat logos multiple times for continuous scroll */}
+          <img src={img2} alt="Company 2" />
+          <img src={img3} alt="Company 3" />
+          <img src={img4} alt="Company 4" />
+          <img src={img5} alt="Company 5" />
+          <img src={img6} alt="Company 6" />
+          <img src={img7} alt="Company 7" />
+          <img src={img8} alt="Company 8" />
+          {/* Repeat logos multiple times for continuous scroll */}
+          <img src={img2} alt="Company 2" />
+          <img src={img3} alt="Company 3" />
+          <img src={img4} alt="Company 4" />
+          <img src={img5} alt="Company 5" />
+          <img src={img6} alt="Company 6" />
+          <img src={img7} alt="Company 7" />
+          <img src={img8} alt="Company 8" />
+        </div>
+      </div>
+
     </section>
   );
 }

@@ -4,33 +4,36 @@
   --grey-80: #CCC;
   --font-1: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: black;
-    --lg-top-gap: 88px; /* total reserved space under top wrapper (adjustable) */
-  --lg-hero-top-adjust: 12px; /* small extra nudge for the hero itself */
+  --lg-top-gap: 88px; /* reserved space under top wrapper */
+  --lg-hero-top-adjust: 12px; /* small nudge for hero */
 }
 
 /* Page wrapper */
-/* ensure page is relative in case you used absolute children elsewhere */
 .lg-page {
   position: relative;
-  padding: 32px 64px; /* <- main left/right space (adjust if needed) */
+  padding: 32px 40px; /* reduced side padding for better use of horizontal space */
   box-sizing: border-box;
+  max-width: 1200px;
+  margin: 0 auto;
+  font-family: var(--font-1);
+  background: black;
+  color: var(--grey-80);
 }
 
-/* wrapper groups back + pill and reserves space for the pill so hero can't overlap */
+/* Top wrapper: back button + pill */
 .lg-top-wrapper {
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  margin-top: 28px;     /* <-- moves the whole block down from the top */
-  padding-left: 0;      /* keep content aligned with .lg-page padding */
+  margin-top: 28px;
+  padding-left: 0;
   z-index: 10;
   padding-bottom: var(--lg-top-gap);
 }
 
-
-/* pill sits in the reserved area (absolute positioned within wrapper) */
+/* Pill */
 .lg-pill {
   position: absolute;
   left: 0;
@@ -43,9 +46,8 @@
   align-items: center;
   padding-left: 10px;
   box-sizing: border-box;
-  background: rgba(0,0,0,0.25);
+  background: rgba(0, 0, 0, 0.25);
   color: var(--white-solid);
-  font-family: var(--font-1);
   font-size: 14px;
   font-weight: 500;
   line-height: 16.8px;
@@ -53,27 +55,28 @@
   z-index: 11;
 }
 
-/* back button stays inline and above hero */
+/* Back button */
 .lg-back {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
+  color: var(--silver);
 }
 .lg-back-icon {
-  width: 12.501px;
-  height: 10.503px;
+  width: 13px;
+  height: 11px;
   opacity: 1;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 .lg-back-text {
-  color: var(--grey-80);
   font-size: 16px;
   font-weight: 500;
   line-height: 22.4px;
   letter-spacing: -0.32px;
+  user-select: none;
 }
 
 /* Hero */
@@ -84,41 +87,31 @@
 }
 .lg-title {
   color: var(--white-solid);
-  font-size: 70px;
+  font-size: 48px; /* reduced from 70px */
   font-weight: 600;
-  line-height: 77px;
-  letter-spacing: -2.2px;
+  line-height: 54px; /* adjusted proportionally */
+  letter-spacing: -1.5px;
   margin: 0 0 18px 0;
 }
 .lg-subtitle {
-  color: var(--grey-80);
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
   margin: 0 0 28px 0;
   max-width: 1100px;
+  color: var(--grey-80);
 }
 
-/* Hero image full width with side gutters */
-.lg-hero-image-wrap {
-  width: calc(100% - 160px); /* leaves bit space left & right */
-  margin: 0 auto 36px;
-}
-.lg-hero-image {
-  width: 100%;
-  height: 420px; /* a bit taller as requested */
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
-}
-
-/* What we offer */
+/* What We Offer section */
 .lg-section {
   display: flex;
   flex-direction: column;
-  width: 800px;
+  width: 100%;
+  max-width: 1100px;
   align-items: flex-start;
-  margin: 36px 0;
+  margin: 36px auto;
+  padding: 0 0; /* no extra padding to maximize width */
+  box-sizing: border-box;
 }
 .lg-section-heading strong {
   color: var(--white-solid);
@@ -128,12 +121,14 @@
   letter-spacing: -2px;
 }
 .lg-section-desc {
+  width: 100%;
+  max-width: none;
   color: var(--grey-80);
   font-size: 16px;
   font-weight: 500;
   line-height: 22.4px;
   margin-top: 14px;
-  max-width: 900px;
+  word-break: break-word;
 }
 
 /* Benefits heading */
@@ -144,14 +139,20 @@
   line-height: 55px;
   letter-spacing: -2px;
   margin: 36px 0 18px 0;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/* Benefit list */
+/* Benefits list */
 .lg-benefits-list {
   display: flex;
   flex-direction: column;
   gap: 18px;
   margin-bottom: 36px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .lg-benefit {
   display: flex;
@@ -171,11 +172,26 @@
   font-weight: 500;
   line-height: 22.4px;
   margin-top: 6px;
+  position: relative;
+  padding-left: 1.2em; /* space for bullet */
 }
 
-/* Why choose */
+.lg-benefit-text::before {
+  content: "•";            /* bullet character */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #9b4dff;          /* bullet color (match your theme) */
+  font-weight: bold;
+  font-size: 1.2em;        /* bullet size */
+  line-height: 1;          /* align vertically */
+}
+
+/* Why Choose section */
 .lg-why {
-  margin: 36px 0 80px 0;
+  margin: 36px auto 80px auto;
+  max-width: 1100px;
+  width: 100%;
 }
 .lg-why-title {
   color: var(--white-solid);
@@ -186,13 +202,40 @@
   margin: 0 0 14px 0;
 }
 .lg-why-desc {
+  width: 100%;
+  max-width: none;
   color: var(--grey-80);
   font-size: 16px;
   font-weight: 500;
   line-height: 22.4px;
-  max-width: 900px;
+  word-break: break-word;
+}
+.lg-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: var(--lg-hero-top-adjust);
+  margin-bottom: 28px;
+}
+.lg-hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 
+.lg-hero-right {
+  flex: 1;
+}
+
+.lg-hero-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: contain;
+}
+
+/* CTA container */
 .cta-container {
   display: flex;
   width: 100%;
@@ -203,7 +246,7 @@
   align-items: center;
   gap: 15px;
   border-radius: 12px;
-  margin: 60px auto;            /* <-- center horizontally, keeps top spacing */
+  margin: 60px auto;
   background: linear-gradient(
     129deg,
     rgba(129, 74, 200, 0.40) 0%,
@@ -212,20 +255,113 @@
     rgba(129, 74, 200, 0.40) 100%
   );
   box-sizing: border-box;
-  text-align: center;           /* keep text centered */
+  text-align: center;
+  cursor: pointer;
+  color: var(--white-solid);
+  user-select: none;
+}
+.cta-container:focus,
+.cta-container:hover {
+  outline: 2px solid var(--white-solid);
+}
+.cta-heading {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+}
+.cta-subheading {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 18px;
+  user-select: none;
+}
+.cta-icon {
+  stroke: white;
 }
 
-
-/* Responsive tweaks */
+/* Responsive adjustments */
 @media (max-width: 1100px) {
-  .lg-hero-image { height: 360px; }
-  .lg-hero-image-wrap { width: calc(100% - 80px); }
-  .lg-title { font-size: 48px; line-height: 54px; }
-  .lg-section { width: 100%; padding: 0 20px; }
+  .lg-page {
+    padding: 24px 30px;
+    max-width: 95%;
+  }
+  .lg-title {
+    font-size: 48px;
+    line-height: 54px;
+  }
+  .lg-hero-image-wrap {
+    max-width: 100%;
+  }
+  .lg-section,
+  .lg-benefits-list,
+  .lg-why {
+    max-width: 100%;
+    padding: 0 12px;
+    margin: 36px auto;
+  }
+  .lg-benefits-title {
+    font-size: 36px;
+  }
+  .lg-why-title {
+    font-size: 36px;
+  }
 }
+
 @media (max-width: 700px) {
-  .lg-page { padding: 24px; }
-  .lg-title { font-size: 34px; line-height: 40px; }
-  .lg-hero-image { height: 220px; }
-  .lg-section { width: 100%; padding: 0 12px; }
+  .lg-page {
+    padding: 24px 16px;
+    max-width: 100%;
+  }
+  .lg-title {
+    font-size: 34px;
+    line-height: 40px;
+  }
+  .lg-hero-image {
+    height: 220px;
+  }
+  .lg-section,
+  .lg-benefits-list,
+  .lg-why {
+    padding: 0 8px;
+    margin: 28px auto;
+  }
+  .lg-benefits-title,
+  .lg-why-title {
+    font-size: 28px;
+  }
+  .cta-container {
+    max-width: 100%;
+    padding: 40px 16px;
+  }
+}
+
+/* Responsive adjustments for small screens */
+@media (max-width: 900px) {
+  .lg-hero-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .lg-hero-left, 
+  .lg-hero-right {
+    flex: unset;
+    width: 100%;
+  }
+
+  .lg-hero-right {
+    margin-top: 20px;
+  }
+
+  .lg-title {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }

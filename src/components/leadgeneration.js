@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/leadgeneration.css";
 import LeadHero from "../images/service1.png"; // <- replace with your hero image
@@ -6,39 +6,43 @@ import LeadHero from "../images/service1.png"; // <- replace with your hero imag
 function LeadGeneration() {
   const navigate = useNavigate();
 
+  // Scroll to top on component mount
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   // Handler must be inside component (hooks cannot be called conditionally/outside)
   const handleBookCallClick = (e) => {
     // If triggered by keyboard, prevent default scroll of spacebar etc.
-    if (e && (e.type === "keydown") && (e.key !== "Enter" && e.key !== " ")) {
+    if (e && e.type === "keydown" && e.key !== "Enter" && e.key !== " ") {
       return;
     }
     // navigate to contact and optionally pass state
     navigate("/contact", { state: { scrollTo: "contact" } });
-    // ensure page scrolled to top after navigation
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // Removed window.scrollTo here because useEffect handles scroll on mount
   };
 
   const benefits = [
     {
       title: "Targeted Prospect Acquisition",
-      text: "Reach prospects who align with your business goals, ensuring higher conversion potential."
+      text: "Reach prospects who align with your business goals, ensuring higher conversion potential.",
     },
     {
       title: "Increased Conversion Rates",
-      text: "Our data-driven approach focuses on high-intent leads, improving your sales outcomes."
+      text: "Our data-driven approach focuses on high-intent leads, improving your sales outcomes.",
     },
     {
       title: "Scalable Campaigns",
-      text: "Flexible strategies that adapt to your budget and growth objectives, from startups to enterprises."
+      text: "Flexible strategies that adapt to your budget and growth objectives, from startups to enterprises.",
     },
     {
       title: "Comprehensive Analytics",
-      text: "Gain insights with detailed reports on lead sources, engagement, and campaign performance."
+      text: "Gain insights with detailed reports on lead sources, engagement, and campaign performance.",
     },
     {
       title: "Time-Saving Efficiency",
-      text: "Let us handle lead generation so your team can focus on closing deals."
-    }
+      text: "Let us handle lead generation so your team can focus on closing deals.",
+    },
   ];
 
   return (
@@ -50,12 +54,23 @@ function LeadGeneration() {
           role="button"
           tabIndex={0}
           aria-label="Go back to services"
-          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") navigate("/service"); }}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") navigate("/service");
+          }}
         >
           <span className="lg-back-icon" aria-hidden="true">
             {/* SVG */}
-            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="11" viewBox="0 0 13 11" fill="none">
-              <path d="M12.7501 5.5C12.7501 5.69891 12.6711 5.88968 12.5304 6.03033C12.3898 6.17098 12.199 6.25 12.0001 6.25H2.8126L6.0326 9.46938C6.1735 9.61027 6.25265 9.80137 6.25265 10.0006C6.25265 10.1999 6.1735 10.391 6.0326 10.5319C5.89171 10.6728 5.70061 10.7519 5.50135 10.7519C5.3021 10.7519 5.111 10.6728 4.9701 10.5319L0.470103 6.03188C0.400183 5.9622 0.344705 5.8794 0.306851 5.78824C0.268997 5.69708 0.249512 5.59934 0.249512 5.50063C0.249512 5.40192 0.268997 5.30418 0.306851 5.21301C0.344705 5.12185 0.400183 5.03905 0.470103 4.96938L4.9701 0.469376C5.03987 0.399611 5.12269 0.34427 5.21384 0.306514C5.30499 0.268758 5.40269 0.249325 5.50135 0.249325C5.60002 0.249325 5.69771 0.268758 5.78886 0.306514C5.88002 0.34427 5.96284 0.399611 6.0326 0.469376C6.10237 0.53914 6.15771 0.621963 6.19546 0.713115C6.23322 0.804267 6.25265 0.901963 6.25265 1.00063C6.25265 1.09929 6.23322 1.19698 6.19546 1.28814C6.15771 1.37929 6.10237 1.46211 6.0326 1.53188L2.8126 4.75H12.0001C12.199 4.75 12.3898 4.82902 12.5304 4.96967C12.6711 5.11032 12.7501 5.30109 12.7501 5.5Z" fill="#CCCCCC"/>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="11"
+              viewBox="0 0 13 11"
+              fill="none"
+            >
+              <path
+                d="M12.7501 5.5C12.7501 5.69891 12.6711 5.88968 12.5304 6.03033C12.3898 6.17098 12.199 6.25 12.0001 6.25H2.8126L6.0326 9.46938C6.1735 9.61027 6.25265 9.80137 6.25265 10.0006C6.25265 10.1999 6.1735 10.391 6.0326 10.5319C5.89171 10.6728 5.70061 10.7519 5.50135 10.7519C5.3021 10.7519 5.111 10.6728 4.9701 10.5319L0.470103 6.03188C0.400183 5.9622 0.344705 5.8794 0.306851 5.78824C0.268997 5.69708 0.249512 5.59934 0.249512 5.50063C0.249512 5.40192 0.268997 5.30418 0.306851 5.21301C0.344705 5.12185 0.400183 5.03905 0.470103 4.96938L4.9701 0.469376C5.03987 0.399611 5.12269 0.34427 5.21384 0.306514C5.30499 0.268758 5.40269 0.249325 5.50135 0.249325C5.60002 0.249325 5.69771 0.268758 5.78886 0.306514C5.88002 0.34427 5.96284 0.399611 6.0326 0.469376C6.10237 0.53914 6.15771 0.621963 6.19546 0.713115C6.23322 0.804267 6.25265 0.901963 6.25265 1.00063C6.25265 1.09929 6.23322 1.19698 6.19546 1.28814C6.15771 1.37929 6.10237 1.46211 6.0326 1.53188L2.8126 4.75H12.0001C12.199 4.75 12.3898 4.82902 12.5304 4.96967C12.6711 5.11032 12.7501 5.30109 12.7501 5.5Z"
+                fill="#CCCCCC"
+              />
             </svg>
           </span>
           <span className="lg-back-text">Go back</span>
@@ -65,33 +80,29 @@ function LeadGeneration() {
         <div className="lg-pill">Lead Generation</div>
       </div>
 
-      {/* Main headline block */}
-      <header className="lg-hero">
-        <h1 className="lg-title">Unlock a Steady Stream of High-Quality Leads</h1>
+      {/* Hero Section with Left Image and Right Text */}
+      <div className="lg-hero-container">
+      {/* LEFT - Text */}
+      <div className="lg-hero-right">
+        <h1 className="lg-title">
+          Unlock a Steady Stream of High-Quality Leads
+        </h1>
         <p className="lg-subtitle">
-          Transform your business growth with vConnect iDees' expert lead generation services, designed to connect you with prospects who are ready to engage.
+          Transform your business growth with vConnect iDees' expert lead
+          generation services, designed to connect you with prospects who are
+          ready to engage.
         </p>
-      </header>
-
-      {/* Hero image full width (with side gutters) */}
-      <div className="lg-hero-image-wrap">
-        <img src={LeadHero} alt="Lead Generation Hero" className="lg-hero-image" />
       </div>
 
-      {/* What We Offer */}
-      <section className="lg-section">
-        <div className="lg-section-heading">
-          <strong>What We Offer</strong>
-        </div>
-
-        <p className="lg-section-desc">
-          At Vconnect, our lead generation service is built to deliver measurable results by targeting the right audience for your business. We start by analyzing your ideal customer profile to understand their needs, behaviors, and pain points. Using a combination of advanced strategies like search engine optimization (SEO), content marketing, social media outreach, and targeted paid advertising, we create customized campaigns that attract high-intent prospects. Our team leverages cutting-edge tools to track performance, ensuring every campaign is optimized for maximum return on investment (ROI). From initial outreach to lead qualification, we handle the entire process, delivering a consistent flow of leads directly to your sales team.
-        </p>
-
-        <p className="lg-section-desc">
-          We also provide detailed analytics and reporting, giving you full visibility into campaign performance and lead quality. Whether you’re a small business looking to grow or an established company seeking to expand your reach, our scalable solutions are tailored to fit your unique goals and budget.
-        </p>
-      </section>
+      {/* RIGHT - Image */}
+      <div className="lg-hero-left">
+        <img
+          src={LeadHero}
+          alt="Lead Generation Hero"
+          className="lg-hero-image"
+        />
+      </div>
+      </div>
 
       {/* Benefits heading */}
       <h2 className="lg-benefits-title">Benefits of Our Lead Generation Services</h2>
@@ -110,7 +121,11 @@ function LeadGeneration() {
       <section className="lg-why">
         <h3 className="lg-why-title">Why Choose vConnect iDees?</h3>
         <p className="lg-why-desc">
-          Our team combines industry expertise with a client-first approach, ensuring every campaign is tailored to your specific needs. We stay ahead of market trends, using the latest tools and strategies to keep your lead pipeline full. With vConnect iDees, you’re not just getting leads—you’re building a foundation for long-term business growth.
+          Our team combines industry expertise with a client-first approach,
+          ensuring every campaign is tailored to your specific needs. We stay
+          ahead of market trends, using the latest tools and strategies to keep
+          your lead pipeline full. With vConnect iDees, you’re not just getting
+          leads—you’re building a foundation for long-term business growth.
         </p>
       </section>
 
@@ -120,21 +135,42 @@ function LeadGeneration() {
         onClick={handleBookCallClick}
         role="button"
         tabIndex={0}
-        onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") handleBookCallClick(e); }}
+        onKeyDown={(e) => {
+          if (e.key === "Enter" || e.key === " ") handleBookCallClick(e);
+        }}
       >
         <div className="cta-heading">
-         Ready to grow your pipeline with<br/> qualified leads?
+          Ready to grow your pipeline with
+          <br />
+          qualified leads?
         </div>
 
-        <div className="cta-subheading">
-          Book a Call Today and Start Scaling
-        </div>
+        <div className="cta-subheading">Book a Call Today and Start Scaling</div>
 
         <div className="cta-button" aria-hidden="true">
           Book a Call
-          <svg xmlns="http://www.w3.org/2000/svg" className="cta-icon" width="16" height="17" viewBox="0 0 16 17" fill="none">
-            <path d="M4.66168 12.1637L11.3283 5.49707" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M4.66168 5.49707H11.3283V12.1637" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="cta-icon"
+            width="16"
+            height="17"
+            viewBox="0 0 16 17"
+            fill="none"
+          >
+            <path
+              d="M4.66168 12.1637L11.3283 5.49707"
+              stroke="white"
+              strokeWidth="1.33333"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+            <path
+              d="M4.66168 5.49707H11.3283V12.1637"
+              stroke="white"
+              strokeWidth="1.33333"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </div>
       </div>

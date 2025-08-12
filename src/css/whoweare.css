@@ -107,17 +107,6 @@
   opacity: var(--opacity-100, 1);
 }
 
-/* Grid title */
-.grid-title {
-  color: var(--xtract-framer-ai-white, var(--color-white-solid, #FFF));
-  font-family: var(--font-family-Font-1, Figtree);
-  font-size: var(--font-size-23, 23px);
-  font-style: normal;
-  font-weight: var(--font-weight-500, 500);
-  line-height: var(--line-height-27_6, 27.6px); /* 120% */
-  letter-spacing: var(--letter-spacing--0_46, -0.46px);
-  margin: 0;
-}
 
 /* Grid description */
 .grid-description {

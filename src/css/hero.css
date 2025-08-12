@@ -74,6 +74,7 @@ html, body {
     rgba(223, 122, 254, 0) 64.17%,
     #814ac8 88%
   );
+  filter: blur(8px);
 }
 
 /* Small Circle */
@@ -90,6 +91,7 @@ html, body {
     rgba(223, 122, 254, 0) 64.17%,
     #814ac8 88%
   );
+  filter: blur(8px);
 }
 
 /* ===== Pill Badge ===== */
@@ -161,6 +163,55 @@ html, body {
 }
 .btn-secondary:hover {
   background: #333;
+}
+
+.logo-ribbon {
+  position: absolute;
+  bottom: 20px; /* adjust distance from bottom */
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 100%;
+  background: none;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  z-index: 3;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.logo-track {
+  display: inline-flex;
+  animation: scroll-left 20s linear infinite;
+}
+
+.logo-track img {
+  height: 50px;
+  margin: 0 1.5rem;
+  object-fit: contain;
+}
+
+/* Animation for scrolling left */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-track {
+  animation: scroll-right 20s linear infinite;
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 /* ============================= */

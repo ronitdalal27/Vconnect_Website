@@ -4,15 +4,14 @@
   --grey-80: #CCC;
   --font-1: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
   background: black;
-    --lg-top-gap: 88px; /* total reserved space under top wrapper (adjustable) */
+  --lg-top-gap: 88px; /* total reserved space under top wrapper (adjustable) */
   --lg-hero-top-adjust: 12px; /* small extra nudge for the hero itself */
 }
 
 /* Page wrapper */
-/* ensure page is relative in case you used absolute children elsewhere */
 .lg-page {
   position: relative;
-  padding: 32px 64px; /* <- main left/right space (adjust if needed) */
+  padding: 32px 64px; /* main left/right space */
   box-sizing: border-box;
 }
 
@@ -23,12 +22,11 @@
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
-  margin-top: 28px;     /* <-- moves the whole block down from the top */
-  padding-left: 0;      /* keep content aligned with .lg-page padding */
+  margin-top: 28px;
+  padding-left: 0;
   z-index: 10;
   padding-bottom: var(--lg-top-gap);
 }
-
 
 /* pill sits in the reserved area (absolute positioned within wrapper) */
 .lg-pill {
@@ -36,26 +34,27 @@
   left: 0;
   bottom: 0;
 
-  /* Auto-size to text */
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  padding: 4px 14px; /* top/bottom 4px, left/right 14px */
+  padding: 10px 10px; /* increased left/right padding for better spacing */
   border-radius: 6px;
   border: 1px solid #222;
-  
-  background: rgba(0,0,0,0.25);
+
+  background: rgba(0, 0, 0, 0.25);
   color: var(--white-solid);
   font-family: var(--font-1);
   font-size: 14px;
   font-weight: 500;
-  line-height: 1; /* ✅ prevent extra vertical spacing */
+  line-height: 1;
   letter-spacing: -0.28px;
   white-space: nowrap;
-  
-  width: 32.8px;
-  height: 153px;
+
+  min-width: 140px; /* minimum width to keep pill shape */
+  width: auto;      /* allow width to grow based on content */
+  box-sizing: border-box; /* include padding & border in width */
+  height: 32.8px;
   z-index: 11;
 }
 
@@ -71,8 +70,8 @@
   cursor: pointer;
 }
 .lg-back-icon {
-  width: 12.501px;
-  height: 10.503px;
+  width: 12.5px;
+  height: 10.5px;
   opacity: 1;
   display: inline-flex;
   align-items: center;
@@ -94,10 +93,10 @@
 }
 .lg-title {
   color: var(--white-solid);
-  font-size: 70px;
+  font-size: 48px; /* reduced from 70px */
   font-weight: 600;
-  line-height: 77px;
-  letter-spacing: -2.2px;
+  line-height: 54px; /* adjusted proportionally */
+  letter-spacing: -1.5px;
   margin: 0 0 18px 0;
 }
 .lg-subtitle {
@@ -105,22 +104,36 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 27px;
-  margin: 0 0 28px 0;
+  margin: 0 0 40px 0;
   max-width: 1100px;
 }
 
-/* Hero image full width with side gutters */
-.lg-hero-image-wrap {
-  width: calc(100% - 160px); /* leaves bit space left & right */
-  margin: 0 auto 36px;
+.lg-hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  margin-top: var(--lg-hero-top-adjust);
+  margin-bottom: 28px;
 }
+.lg-hero-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.lg-hero-right {
+  flex: 1;
+}
+
 .lg-hero-image {
-  width: 100%;
-  height: 420px; /* a bit taller as requested */
-  object-fit: cover;
+  max-width: 100%;
+  height: auto;
   border-radius: 10px;
-  display: block;
+  object-fit: contain;
 }
+
+
 
 /* What we offer */
 .lg-section {
@@ -153,7 +166,7 @@
   font-weight: 600;
   line-height: 55px;
   letter-spacing: -2px;
-  margin: 36px 0 18px 0;
+  margin-bottom: 10px;
 }
 
 /* Benefit list */
@@ -161,7 +174,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  margin-bottom: 36px;
+  margin-bottom: 10px;
 }
 .lg-benefit {
   display: flex;
@@ -174,14 +187,30 @@
   font-weight: 700;
   line-height: 22.4px;
   letter-spacing: -0.32px;
+  margin-bottom: 4px
 }
+
 .lg-benefit-text {
   color: var(--grey-80);
   font-size: 16px;
   font-weight: 500;
   line-height: 22.4px;
-  margin-top: 6px;
+  margin-bottom: 0;
+  position: relative;
+  padding-left: 1.2em; /* space for bullet */
 }
+
+.lg-benefit-text::before {
+  content: "•";            /* bullet character */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #9b4dff;          /* bullet color (match your theme) */
+  font-weight: bold;
+  font-size: 1.2em;        /* bullet size */
+  line-height: 1;          /* align vertically */
+}
+
 
 /* Why choose */
 .lg-why {
@@ -213,7 +242,7 @@
   align-items: center;
   gap: 15px;
   border-radius: 12px;
-  margin: 60px auto;            /* <-- center horizontally, keeps top spacing */
+  margin: 60px auto; /* center horizontally, keep top spacing */
   background: linear-gradient(
     129deg,
     rgba(129, 74, 200, 0.40) 0%,
@@ -222,20 +251,33 @@
     rgba(129, 74, 200, 0.40) 100%
   );
   box-sizing: border-box;
-  text-align: center;           /* keep text centered */
+  text-align: center; /* center text */
 }
 
-
-/* Responsive tweaks */
 @media (max-width: 1100px) {
-  .lg-hero-image { height: 360px; }
-  .lg-hero-image-wrap { width: calc(100% - 80px); }
-  .lg-title { font-size: 48px; line-height: 54px; }
-  .lg-section { width: 100%; padding: 0 20px; }
+  .lg-title {
+    font-size: 36px; /* reduced from 48px */
+    line-height: 42px;
+  }
 }
+
 @media (max-width: 700px) {
-  .lg-page { padding: 24px; }
-  .lg-title { font-size: 34px; line-height: 40px; }
-  .lg-hero-image { height: 220px; }
-  .lg-section { width: 100%; padding: 0 12px; }
+  .lg-title {
+    font-size: 28px; /* reduced from 34px */
+    line-height: 34px;
+  }
+}
+
+@media (max-width: 480px) {
+  .lg-title {
+    font-size: 22px; /* reduced from 26px */
+    line-height: 28px;
+  }
+}
+
+/* Large desktops / ultra-wide screens */
+@media (min-width: 1600px) {
+  .lg-page { padding: 32px 10%; }
+  .lg-hero-image-wrap { max-width: 800px; }
+  .lg-title { font-size: 80px; line-height: 86px; }
 }

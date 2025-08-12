@@ -1,4 +1,4 @@
-.career-section {
+.channel-partner-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,8 +8,9 @@
   box-sizing: border-box;
 }
 
-.contact-tag {
-  width: clamp(50px, 10vw, 66px);
+/* ✅ Tag */
+.channel-partner-tag {
+  width: clamp(100px, 20vw, 132px);
   height: 32.8px;
   border-radius: 6px;
   border: 1px solid #222;
@@ -26,7 +27,8 @@
   margin-bottom: 20px;
 }
 
-.contact-heading {
+/* ✅ Heading */
+.channel-partner-heading {
   font-family: Figtree, sans-serif;
   font-size: clamp(24px, 4vw, 50px);
   font-weight: 600;
@@ -36,7 +38,8 @@
   margin-bottom: 10px;
 }
 
-.contact-subheading {
+/* ✅ Subheading */
+.channel-partner-subheading {
   font-family: Figtree, sans-serif;
   font-size: clamp(14px, 2vw, 18px);
   font-weight: 500;
@@ -48,9 +51,10 @@
   max-width: 700px;
 }
 
-.contact-form {
-  width: 700px;
-  max-width: 100%;
+/* ✅ Form */
+.channel-partner-form {
+  width: 100%;
+  max-width: 700px;
   border-radius: 12px;
   border: 1px solid #222;
   background: rgba(13, 13, 13, 0.8);
@@ -61,23 +65,29 @@
   color: #fff;
 }
 
+/* ✅ Input Rows */
 .form-row {
   display: flex;
   justify-content: space-between;
   gap: 20px;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  flex: 1;
+  min-width: 280px; /* Prevents squishing on small screens */
 }
+
 
 .form-group label {
   font-family: Figtree, sans-serif;
   font-size: 16px;
   font-weight: 500;
+  line-height: 22.4px;
+  letter-spacing: -0.32px;
   margin-bottom: 6px;
 }
 
@@ -89,12 +99,16 @@
   color: #ccc;
   font-family: Figtree, sans-serif;
   font-size: 16px;
+  font-weight: 500;
+  letter-spacing: -0.32px;
   padding: 10px 12px;
 }
 
+/* ✅ Submit Button */
 .submit-btn {
   display: flex;
-  width: 660px;
+  width: 100%;
+  max-width: 660px;
   padding: 11px 18px 12px;
   justify-content: center;
   align-items: center;
@@ -109,9 +123,6 @@
   cursor: pointer;
   margin: 0 auto;
 }
-.form-group.full-width {
-  width: 100%;
-}
 
 /* 📱 Mobile responsiveness */
 @media (max-width: 480px) {
@@ -119,32 +130,34 @@
     flex-direction: column;
     gap: 16px;
   }
+  .form-group {
+    min-width: 100%;
+  }
   .submit-btn {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
 /* 📱 Tablet responsiveness */
 @media (max-width: 768px) {
-  .contact-form {
-    padding: 16px;
-  }
   .form-row {
     flex-direction: column;
     gap: 18px;
   }
+  .form-group {
+    min-width: 100%;
+  }
   .submit-btn {
-    width: 100%;
+    max-width: 100%;
   }
 }
 
-/* 💻 Large screens (more comfortable spacing) */
+/* 💻 Large desktop screens */
 @media (min-width: 1400px) {
-  .contact-form {
+  .channel-partner-form {
     max-width: 900px;
   }
   .submit-btn {
-    width: 100%;
     max-width: 900px;
   }
 }

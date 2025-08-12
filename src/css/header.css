@@ -4,16 +4,17 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-height: clamp(48px, 7vh, 65px); /* ✅ Dynamic height */
+  min-height: clamp(40px, 6vh, 55px); /* reduced height range */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 clamp(8px, 2vw, 16px);
+  padding: 0 clamp(6px, 1.5vw, 12px); /* reduce horizontal padding a bit */
   background-color: black;
   border-bottom: 1px solid #222;
   z-index: 1000;
   box-sizing: border-box;
 }
+
 
 /* ✅ Wrapper to apply inner spacing for left and right */
 .header-inner {
@@ -35,10 +36,11 @@
 
 /* ✅ Logo Image */
 .logo-image {
-  height: clamp(42px, 7vh, 60px);
-  max-width: clamp(90px, 18vw, 140px);
+  height: clamp(40px, 8vh, 50px);    /* increased from 50-60px to 70-80px */
+  max-width: clamp(110px, 20vw, 160px); /* increased from 90-140px to 110-160px */
   object-fit: contain;
 }
+
 
 
 

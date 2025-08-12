@@ -58,7 +58,9 @@
   justify-content: center;
   gap: 30px;
   width: 100%;
+  height: 100%;
   margin-top: 20px;
+  margin-bottom: 40px;
   position: relative;
 }
 
@@ -72,7 +74,7 @@
 /* Card (same size as your team cards) */
 .service-card {
   width: 323.33px;        /* same as team-card */
-  height: 435px;         /* same as team-card */
+  height: 460px;         /* same as team-card */
   border-radius: 8px;
   border: 1px solid var(--grey-13);
   position: relative;
@@ -120,11 +122,12 @@
   width: 100%;
 }
 
-/* Pill style (left aligned) — same width for all pills */
+/* Pill style (left aligned) — dynamic width based on text */
+/* Common pill base styles */
 .service-card-pill {
   display: inline-flex;
   align-items: center;
-  justify-content: flex-start; /* left align text inside pill */
+  justify-content: flex-start;
   padding: 0 14px;
   height: 32.8px;
   border-radius: 6px;
@@ -134,10 +137,25 @@
   font-family: var(--font-1);
   font-size: 14px;
   font-weight: 500;
-  white-space: nowrap; /* keeps text in one line */
-  width: var(--pill-width); /* unified width */
+  white-space: nowrap;
   box-sizing: border-box;
 }
+
+/* Individual pill widths */
+.pill1 {
+  width: 130px; /* Lead Generation */
+}
+
+.pill2 {
+  width: 170px; /* Appointment Settings */
+}
+
+.pill3 {
+  width: 130px; /* Email Marketing */
+}
+
+
+
 
 /* Heading left aligned and matches your typography */
 .service-card-heading {

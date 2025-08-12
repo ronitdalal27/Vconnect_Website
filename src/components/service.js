@@ -51,7 +51,7 @@ function Service() {
               />
               <div className="service-card-footer">
                 <div className="service-card-text">
-                  <div className="service-card-pill">{s.pill}</div>
+                  <div className={`service-card-pill pill${idx + 1}`}>{s.pill}</div>
                   <div className="service-card-heading">
                     {s.heading.split("\n").map((line, i) => (
                       <React.Fragment key={i}>
