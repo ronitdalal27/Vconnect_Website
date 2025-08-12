@@ -82,14 +82,16 @@ const radialGradient = "radial-gradient(84.1% 87.15% at 49.83% 49.95%, #FFF 0%, 
 
 function OurTeam() {
   const [selectedMember, setSelectedMember] = useState(null);
+  const [animateOverlay, setAnimateOverlay] = useState(false);
 
   useEffect(() => {
-    const handleEsc = (e) => {
-      if (e.key === "Escape") setSelectedMember(null);
-    };
-    window.addEventListener("keydown", handleEsc);
-    return () => window.removeEventListener("keydown", handleEsc);
-  }, []);
+    if (selectedMember) {
+      // Delay adding animation class so CSS transition runs
+      requestAnimationFrame(() => setAnimateOverlay(true));
+    } else {
+      setAnimateOverlay(false);
+    }
+  }, [selectedMember]);
 
   const handleCardClick = (member) => {
     if (selectedMember && selectedMember.name === member.name) {
@@ -158,68 +160,65 @@ function OurTeam() {
       <h2 className="ourteam-subheading">Love God, Love People, Love What We Do.</h2>
 
       {selectedMember && (
-  <div className="overlay-backdrop" onClick={closeOverlay}>
-    <div
-      className="overlay-card"
-      onClick={(e) => e.stopPropagation()} // Prevent backdrop clicks closing overlay accidentally
-    >
-      {/* Close button */}
-      <button 
-        className="overlay-close-btn" 
-        onClick={() => setSelectedMember(null)} 
-        aria-label="Close overlay"
-        type="button"
+      <div 
+        className={`overlay-backdrop ${animateOverlay ? "show" : ""}`} 
+        onClick={closeOverlay}
       >
-        {/* You can use a simple SVG cross or × symbol */}
-        <svg 
-          xmlns="http://www.w3.org/2000/svg" 
-          width="24" 
-          height="24" 
-          viewBox="0 0 24 24" 
-          fill="none" 
-          stroke="currentColor" 
-          strokeWidth="2" 
-          strokeLinecap="round" 
-          strokeLinejoin="round"
+        <div
+          className={`overlay-card ${animateOverlay ? "show" : ""}`}
+          onClick={(e) => e.stopPropagation()}
         >
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
+          {/* Close button */}
+          <button 
+            className="overlay-close-btn" 
+            onClick={() => setSelectedMember(null)} 
+            aria-label="Close overlay"
+            type="button"
+          >
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="24" 
+              height="24" 
+              viewBox="0 0 24 24" 
+              fill="none" 
+              stroke="currentColor" 
+              strokeWidth="2" 
+              strokeLinecap="round" 
+              strokeLinejoin="round"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
 
-      <div className="overlay-inner">
-        {/* Left Column */}
-        <div className="overlay-left">
-          <h1 className="overlay-name">{selectedMember.name}</h1>
-          <h3 className="overlay-designation">
-            {memberDetails[selectedMember.name]?.designation}
-          </h3>
-          <h2 className="overlay-designation">
-            {memberDetails[selectedMember.name]?.title}
-          </h2>
-          <p className="overlay-bio">
-            {memberDetails[selectedMember.name]?.bio}
-          </p>
-        </div>
-
-        {/* Right Column */}
-        <div className="overlay-right">
-          <div
-            className="overlay-image"
-            style={{
-              backgroundImage: `url(${selectedMember.image}), ${radialGradient}`,
-              backgroundSize: "cover, cover",
-              backgroundPosition: "center, center",
-              backgroundRepeat: "no-repeat, no-repeat"
-            }}
-          />
+          <div className="overlay-inner">
+            <div className="overlay-left">
+              <h1 className="overlay-name">{selectedMember.name}</h1>
+              <h3 className="overlay-designation">
+                {memberDetails[selectedMember.name]?.designation}
+              </h3>
+              <h2 className="overlay-designation">
+                {memberDetails[selectedMember.name]?.title}
+              </h2>
+              <p className="overlay-bio">
+                {memberDetails[selectedMember.name]?.bio}
+              </p>
+            </div>
+            <div className="overlay-right">
+              <div
+                className="overlay-image"
+                style={{
+                  backgroundImage: `url(${selectedMember.image}), ${radialGradient}`,
+                  backgroundSize: "cover, cover",
+                  backgroundPosition: "center, center",
+                  backgroundRepeat: "no-repeat, no-repeat"
+                }}
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-)}
-
-
+    )}
 
     </section>
   );
