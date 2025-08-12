@@ -120,3 +120,88 @@
   margin: 0;
   align-self: stretch;
 }
+
+/* Large desktops (1440px and above) */
+@media (min-width: 1440px) {
+  .who-we-are-heading {
+    font-size: 52px;
+    line-height: 58px;
+  }
+  .who-we-are-description {
+    font-size: 19px;
+  }
+  .who-we-are-grid {
+    width: 320px;
+    height: auto; /* allow flexible height if text increases */
+  }
+}
+
+/* Laptops / small desktops */
+@media (max-width: 1200px) {
+  .who-we-are-heading {
+    font-size: 44px;
+    line-height: 50px;
+  }
+  .who-we-are-description {
+    font-size: 17px;
+  }
+  .who-we-are-grid-row {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .who-we-are-grid {
+    width: calc(50% - 10px); /* two per row */
+    height: auto;
+  }
+}
+
+/* Tablets (portrait & landscape) */
+@media (max-width: 900px) {
+  .who-we-are-heading {
+    font-size: 38px;
+    line-height: 44px;
+  }
+  .who-we-are-description {
+    font-size: 16px;
+  }
+  .who-we-are-grid {
+    width: 100%; /* one per row */
+    height: auto;
+  }
+  .who-we-are-grid-row {
+    gap: 16px;
+  }
+}
+
+/* Small tablets / large phones */
+@media (max-width: 768px) {
+  .who-we-are-section {
+    padding: 40px 20px;
+  }
+  .who-we-are-heading {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .who-we-are-description {
+    font-size: 15px;
+    line-height: 22px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .who-we-are-heading {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .who-we-are-description {
+    font-size: 14px;
+  }
+  .who-we-are-grid {
+    padding: 15px 20px;
+  }
+  .grid-description {
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

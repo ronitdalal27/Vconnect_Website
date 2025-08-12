@@ -80,7 +80,7 @@ const Faq = () => {
       </div>
 
       {/* CTA Section */}
-      <div className="cta-container" onClick={handleBookCallClick} role="button" tabIndex="0">
+      <div className="cta-container" role="button" tabIndex="0">
         <div className="cta-heading">
           Let us do the Work so<br />you can Scale Faster
         </div>
@@ -89,7 +89,7 @@ const Faq = () => {
           Book a Call Today and Start Scaling
         </div>
 
-        <div className="cta-button">
+        <div className="cta-button" onClick={handleBookCallClick}>
           Book a Call
           <svg xmlns="http://www.w3.org/2000/svg" className="cta-icon" width="16" height="17" viewBox="0 0 16 17" fill="none">
             <path d="M4.66168 12.1637L11.3283 5.49707" stroke="white" strokeWidth="1.33333" strokeLinecap="round" strokeLinejoin="round" />

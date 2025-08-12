@@ -187,3 +187,67 @@
 @media (max-width: 600px) {
   .service-card { width: 100%; }
 }
+/* Large desktops / wide screens */
+@media (min-width: 1400px) {
+  .services-cards-grid {
+    gap: 40px; /* more breathing space on huge screens */
+    max-width: 1400px;
+  }
+  .service-card {
+    width: 340px; /* slightly wider on big screens */
+    height: 480px;
+  }
+}
+
+/* Tablets in portrait and smaller laptops */
+@media (max-width: 1024px) {
+  .service-card {
+    width: calc(50% - 20px); /* 2 per row */
+    height: auto; /* let height adjust naturally */
+  }
+  .service-card-image {
+    height: 280px;
+  }
+}
+
+/* Small tablets & large phones */
+@media (max-width: 768px) {
+  .services-heading {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .services-description {
+    font-size: 16px;
+  }
+  .service-card {
+    width: 100%; /* single column */
+  }
+  .service-card-image {
+    height: 240px;
+  }
+}
+
+/* Very small mobile phones */
+@media (max-width: 480px) {
+  .services-wrapper {
+    padding: 50px 20px;
+  }
+  .services-heading {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .services-description {
+    font-size: 14px;
+  }
+  .service-card-footer {
+    padding: 12px;
+  }
+  .service-card-heading {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .service-card-pill {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+}

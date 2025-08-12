@@ -180,33 +180,6 @@
   margin-top: 30px;
 }
 
-/* Responsive tweak: stack rows on narrow screens */
-@media (max-width: 900px) {
-  .ourteam-row {
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-
-  .team-card {
-    width: calc(50% - 20px);
-  }
-
-  .ourteam-cards-grid {
-    gap: 24px;
-  }
-}
-
-@media (max-width: 520px) {
-  .team-card {
-    width: 100%;
-  }
-
-  .team-card-image.large,
-  .team-card-image.small {
-    width: calc(100% - 32px); /* slightly less side padding on tiny screens */
-  }
-}
-
 /* Overlay backdrop */
 .overlay-backdrop {
   position: fixed;
@@ -356,5 +329,125 @@
 }
 
 .overlay-close-btn:hover {
-  color: #ff4444; /* example hover color */
+  color: #d95be8; /* example hover color */
+}
+
+/* Responsive adjustments */
+
+/* Large tablets and small laptops */
+@media (max-width: 1200px) {
+  .team-card {
+    width: 320px;
+    height: auto;
+  }
+
+  .overlay-inner {
+    gap: 30px;
+  }
+
+  .overlay-name {
+    font-size: 60px;
+    line-height: 1.2;
+  }
+}
+
+/* Tablets */
+@media (max-width: 900px) {
+  .ourteam-row {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .team-card {
+    width: calc(50% - 20px);
+    height: auto;
+  }
+
+  .overlay-card {
+    flex-direction: column;
+    padding: 30px 20px;
+    min-height: auto;
+    width: 95%;
+    max-height: 90vh;
+  }
+
+  .overlay-inner {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .overlay-right {
+    order: -1;
+  }
+
+  .overlay-image {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+  }
+
+  .overlay-name {
+    font-size: 48px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .overlay-designation {
+    text-align: center;
+  }
+
+  .overlay-bio {
+    text-align: left;
+  }
+}
+
+/* Mobiles */
+@media (max-width: 520px) {
+  .ourteam-section {
+    padding: 40px 20px;
+  }
+
+  .ourteam-heading,
+  .ourteam-subheading {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .ourteam-description {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .team-card {
+    width: 100%;
+    height: auto;
+  }
+
+  .team-card-image.large,
+  .team-card-image.small {
+    width: calc(100% - 20px);
+    height: auto;
+    aspect-ratio: 4/5; /* maintain shape */
+  }
+
+  .overlay-card {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .overlay-name {
+    font-size: 36px;
+    line-height: 1.3;
+  }
+
+  .overlay-designation {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+
+  .overlay-bio {
+    font-size: 14px;
+    line-height: 1.5;
+  }
 }

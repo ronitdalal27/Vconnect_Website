@@ -163,3 +163,85 @@
     transform: translateX(0);
   }
 }
+
+/* ======= RESPONSIVE BREAKPOINTS ======= */
+
+/* Large Desktops (≥1200px) */
+@media (min-width: 1200px) {
+  .about-hero-section {
+    padding: 100px 60px;
+  }
+}
+
+/* Laptops / Small Desktops (992px–1199px) */
+@media (max-width: 1199px) {
+  .about-heading h1 {
+    font-size: 56px;
+    line-height: 64px;
+  }
+  .about-description p {
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+/* Tablets (768px–991px) */
+@media (max-width: 991px) {
+  .about-hero-section {
+    padding: 60px 30px;
+  }
+  .about-heading h1 {
+    font-size: 44px;
+    line-height: 52px;
+  }
+  .about-description {
+    padding: 0 10px;
+  }
+  .logo-track img {
+    height: 45px;
+    margin: 0 1rem;
+  }
+}
+
+/* Large Phones (576px–767px) */
+@media (max-width: 767px) {
+  .about-hero-section {
+    padding: 50px 20px;
+  }
+  .about-heading h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .about-description p {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .logo-track img {
+    height: 40px;
+    margin: 0 0.8rem;
+  }
+}
+
+/* Small Phones (<576px) */
+@media (max-width: 575px) {
+  .about-hero-section {
+    padding: 40px 16px;
+    gap: 15px;
+  }
+  .about-heading h1 {
+    font-size: 26px;
+    line-height: 32px;
+  }
+  .about-description p {
+    font-size: 14px;
+    line-height: 22px;
+  }
+  .about-tag {
+    width: auto;
+    padding: 0 12px;
+  }
+  .logo-track img {
+    height: 35px;
+    margin: 0 0.5rem;
+  }
+}

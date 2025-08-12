@@ -130,50 +130,50 @@ function LeadGeneration() {
       </section>
 
       {/* ✅ CTA Section */}
+          <div className="cta-container" role="region">
+      <div className="cta-heading">
+        Let us handle the scheduling so
+        <br />
+        you can focus on winning clients.
+      </div>
+
+      <div className="cta-subheading">Book a Call Today and Start Scaling</div>
+
       <div
-        className="cta-container"
-        onClick={handleBookCallClick}
+        className="cta-button"
+        onClick={handleBookCallClick} // ✅ moved here
         role="button"
         tabIndex={0}
         onKeyDown={(e) => {
           if (e.key === "Enter" || e.key === " ") handleBookCallClick(e);
         }}
       >
-        <div className="cta-heading">
-          Ready to grow your pipeline with
-          <br />
-          qualified leads?
-        </div>
-
-        <div className="cta-subheading">Book a Call Today and Start Scaling</div>
-
-        <div className="cta-button" aria-hidden="true">
-          Book a Call
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="cta-icon"
-            width="16"
-            height="17"
-            viewBox="0 0 16 17"
-            fill="none"
-          >
-            <path
-              d="M4.66168 12.1637L11.3283 5.49707"
-              stroke="white"
-              strokeWidth="1.33333"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M4.66168 5.49707H11.3283V12.1637"
-              stroke="white"
-              strokeWidth="1.33333"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
+        Book a Call
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="cta-icon"
+          width="16"
+          height="17"
+          viewBox="0 0 16 17"
+          fill="none"
+        >
+          <path
+            d="M4.66168 12.1637L11.3283 5.49707"
+            stroke="white"
+            strokeWidth="1.33333"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path
+            d="M4.66168 5.49707H11.3283V12.1637"
+            stroke="white"
+            strokeWidth="1.33333"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
       </div>
+    </div>
     </main>
   );
 }
