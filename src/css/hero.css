@@ -39,7 +39,7 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('/src/images/container.png') no-repeat center center;
+  background: no-repeat center center;
   background-size: cover;
   z-index: 0;
 }

@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  min-height: clamp(40px, 6vh, 55px); /* reduced height range */
+  min-height: clamp(60px, 6vh, 55px); /* reduced height range */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,12 +19,12 @@
 /* ✅ Wrapper to apply inner spacing for left and right */
 .header-inner {
   width: 100%;
-  max-width: 1440px; /* Optional: limit max width */
+  max-width: 1200px; /* Optional: limit max width */
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 0 clamp(80px, 18vw, 275px);
+  /* align-items: center; */
+   padding: 0 20px;
   box-sizing: border-box;
 }
 
@@ -36,11 +36,12 @@
 
 /* ✅ Logo Image */
 .logo-image {
-  height: clamp(40px, 8vh, 50px);    /* increased from 50-60px to 70-80px */
+  height: clamp(80px, 8vh, 100px);    /* increased from 50-60px to 70-80px */
   max-width: clamp(110px, 20vw, 160px); /* increased from 90-140px to 110-160px */
   object-fit: contain;
+  margin-left: 100px;
+  
 }
-
 
 
 /* ✅ Navigation Links */
@@ -48,8 +49,9 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: clamp(6px, 2vw, 15px);
+  gap: clamp(8px, 2vw, 20px);
   flex-wrap: wrap; /* ✅ allows wrapping on smaller screens */
+  margin-left: 270px;
 }
 
 /* ✅ Navigation Buttons */
@@ -63,6 +65,7 @@
   font-size: clamp(11px, 1.8vw, 15px);
   line-height: 1.2; /* ✅ keeps text compact */
   transition: background 0.3s ease;
+  
 }
 
 .nav-btn:hover {
@@ -74,16 +77,25 @@
 /* ✅ Responsive Adjustments */
 /* ============================= */
 
+
 /* Tablets */
-@media (max-width: 768px) {
+@media (max-width: 960px) {
+  .header-inner{
+    justify-content: flex-start;
+  }
+
   .header {
-    min-height: clamp(46px, 6.5vh, 60px);
+    min-height: clamp(60px, 6.5vh, 80px);
     padding: 0 clamp(6px, 2vw, 12px);
+    justify-content: flex-start;
   }
 
   .logo-image {
-    height: clamp(22px, 3.8vh, 35px);
-    max-width: clamp(60px, 14vw, 100px);
+    height: clamp(80px, 8vh, 100px);    /* increased from 50-60px to 70-80px */
+    max-width: clamp(110px, 20vw, 160px); /* increased from 90-140px to 110-160px */
+    object-fit: contain;
+    margin-left: 0;
+    margin-right: auto;
   }
 
   /* HIDE desktop nav on mobile */
@@ -99,6 +111,8 @@
     width: 22px;
     height: 18px;
     cursor: pointer;
+    margin-top: 30px;
+    margin-left: auto;
   }
 
   .hamburger span {
@@ -138,10 +152,77 @@
   }
 }
 
+/* big-screen mobiles */
 @media (max-width: 768px) {
+  .header-inner{
+    justify-content: flex-start;
+  }
+
+  .header {
+    min-height: clamp(50px, 6.5vh, 70px);
+    padding: 0 clamp(6px, 2vw, 12px);
+    justify-content: flex-start;
+  }
+
   .logo-image {
-    height: clamp(26px, 4.5vh, 38px);
-    max-width: clamp(80px, 16vw, 120px);
+    height: clamp(80px, 8vh, 100px);    /* increased from 50-60px to 70-80px */
+    max-width: clamp(110px, 20vw, 160px); /* increased from 90-140px to 110-160px */
+    object-fit: contain;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  /* HIDE desktop nav on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  /* SHOW hamburger icon */
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 22px;
+    height: 18px;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: auto;
+  }
+
+  .hamburger span {
+    display: block;
+    height: 2px;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  /* Mobile menu container */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    background-color: black;
+    position: absolute;
+    top: 100%; /* directly below header */
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #222;
+    padding: 10px 0;
+    z-index: 999;
+  }
+
+  .mobile-menu button {
+    background: none;
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 16px;
+    text-align: left;
+    width: 100%;
+  }
+
+  .mobile-menu button:hover {
+    background-color: #9b4dff;
   }
 }
 
@@ -149,13 +230,15 @@
 /* Mobiles */
 @media (max-width: 600px) {
   .header {
-    min-height: clamp(42px, 6vh, 55px);
+    min-height: clamp(40px, 5vh, 60px);
+    padding: 0 clamp(4px, 2vw, 8px);
   }
 
   .logo-image {
-    height: clamp(22px, 3.8vh, 32px);
-    max-width: clamp(65px, 14vw, 100px);
-  }
+    height: clamp(90px, 9vh, 110px);    /* increased from 50-60px to 70-80px */
+    max-width: clamp(130px, 25vw, 180px); /* increased from 90-140px to 110-160px */
+    object-fit: contain;
+}
 
   .nav-links {
     gap: clamp(4px, 1.2vw, 8px);
@@ -172,7 +255,8 @@
   .header {
     flex-direction: column;
     align-items: flex-start;
-    padding: 6px 8px;
+    min-height: clamp(40px, 5vh, 60px);
+    padding: 0 clamp(4px, 2vw, 8px);
   }
 
   .nav-links {
@@ -194,7 +278,8 @@
   }
 
   .logo-image {
-    height: clamp(20px, 3.5vh, 28px);
-    max-width: clamp(55px, 12vw, 90px);
-  }
+    height: clamp(80px, 8vh, 100px);    /* increased from 50-60px to 70-80px */
+    max-width: clamp(110px, 20vw, 160px); /* increased from 90-140px to 110-160px */
+    object-fit: contain;
+}
 }

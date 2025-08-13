@@ -1,8 +1,5 @@
 import React from "react";
 import '../css/testimonial.css'; // Import the CSS file
-import img1 from "../images/himani.png";
-import img2 from "../images/balavishnu.png";
-import img3 from "../images/AnkitShah.png";
 
 
 const testimonials = [
@@ -10,19 +7,19 @@ const testimonials = [
     text: `"The team demonstrates commendable consistency, sincerity & passion to get results for their clients."`, 
     name: "Himani Chandorkar",
     title: "CoFounder | Etude 360 & Acumen 360",
-    image: img1
+    image: "/images/himani.png"
   },
   {
     text: '"They have been very prompt in understanding the Ideal customer profile,& arranging meetings."',
     name: "Balavishnu",
     title: "Founder of TechnoTackle",
-    image: img2
+    image: "/images/balavishnu.png"
   },
   {
     text: '"From understanding your needs to connecting you with the right customers, the vConnect team is best."',
     name: "Ankit Shah",
     title: "CEO & Founder | Webtual",
-    image: img3
+    image: "/images/AnkitShah.png"
   }
 ];
 

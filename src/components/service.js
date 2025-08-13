@@ -1,28 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../css/service.css";
-import Img1 from "../images/service1.png";
-import Img2 from "../images/service2.png";
-import Img3 from "../images/service3.png";
 
 const services = [
   {
     id: "lead-generation",
-    img: Img1,
+    img: "/images/service1.png",
     pill: "Lead Generation",
     heading: "Precision - Target Prospect\nIdentification",
     to: "/services/lead-generation",
   },
   {
     id: "appointment-settings",
-    img: Img2,
+    img: "/images/service2.png",
     pill: "Appointment Settings",
     heading: "End-to-End\nPipeline Conversion",
     to: "/services/appointment-setting",
   },
   {
     id: "email-marketing",
-    img: Img3,
+    img: "/images/service3.png",
     pill: "Email Marketing",
     heading: "High-Impact\nNurture & Conversion",
     to: "/services/email-marketing",

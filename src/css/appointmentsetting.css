@@ -17,22 +17,19 @@
 
 /* wrapper groups back + pill and reserves space for the pill so hero can't overlap */
 .lg-top-wrapper {
-  position: relative;
+  margin-top: 300px; /* enough to clear fixed header height */
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 8px;
-  margin-top: 28px;
-  padding-left: 0;
-  z-index: 10;
-  padding-bottom: var(--lg-top-gap);
+  gap: 2px; /* smaller gap between go back & pill */
+  padding-bottom: 8px; /* smaller space before hero */
 }
 
 /* pill sits in the reserved area (absolute positioned within wrapper) */
 .lg-pill {
-  position: absolute;
+  position: relative;
   left: 0;
-  bottom: 0;
+  bottom: auto;
 
   display: inline-flex;
   align-items: center;
@@ -56,6 +53,7 @@
   box-sizing: border-box; /* include padding & border in width */
   height: 32.8px;
   z-index: 11;
+  margin-top: 4px;
 }
 
 .lg-pill * {
@@ -88,7 +86,7 @@
 /* Hero */
 .lg-hero {
   align-self: stretch;
-  margin-top: var(--lg-hero-top-adjust);
+  margin-top: 8px;
   margin-bottom: 28px;
 }
 .lg-title {
@@ -254,30 +252,17 @@
   text-align: center; /* center text */
 }
 
-@media (max-width: 1100px) {
-  .lg-title {
-    font-size: 36px; /* reduced from 48px */
-    line-height: 42px;
-  }
-}
-
+/* 
 @media (max-width: 700px) {
   .lg-title {
-    font-size: 28px; /* reduced from 34px */
+    font-size: 28px;
     line-height: 34px;
   }
 }
 
 @media (max-width: 480px) {
   .lg-title {
-    font-size: 22px; /* reduced from 26px */
+    font-size: 22px;
     line-height: 28px;
   }
-}
-
-/* Large desktops / ultra-wide screens */
-@media (min-width: 1600px) {
-  .lg-page { padding: 32px 10%; }
-  .lg-hero-image-wrap { max-width: 800px; }
-  .lg-title { font-size: 80px; line-height: 86px; }
-}
+} */

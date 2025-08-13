@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import '../css/header.css';
-import logo from "../images/VconnectLogo.png";
 
 function Header() {
   const navigate = useNavigate();
@@ -38,7 +37,7 @@ function Header() {
     <header className="header" id="header">
       <div className="header-inner">
         <img
-          src={logo}
+          src="/images/VconnectLogo.png"
           alt="Logo"
           className="logo-image"
           onClick={() => scrollOrNavigate("hero", "/")}

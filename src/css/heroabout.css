@@ -23,6 +23,7 @@
   width: 100%;
   box-sizing: border-box;
   background-color: black;
+  margin-bottom: 30px;
 }
 
 /* About Us Tag */
@@ -201,10 +202,15 @@
     height: 45px;
     margin: 0 1rem;
   }
+
+  .about-logo-text {
+    margin-bottom: 30px;
+  }
+  
 }
 
 /* Large Phones (576px–767px) */
-@media (max-width: 767px) {
+@media (min-width: 300px) and (max-width: 767px) {
   .about-hero-section {
     padding: 50px 20px;
   }
@@ -220,28 +226,8 @@
     height: 40px;
     margin: 0 0.8rem;
   }
-}
 
-/* Small Phones (<576px) */
-@media (max-width: 575px) {
-  .about-hero-section {
-    padding: 40px 16px;
-    gap: 15px;
-  }
-  .about-heading h1 {
-    font-size: 26px;
-    line-height: 32px;
-  }
-  .about-description p {
-    font-size: 14px;
-    line-height: 22px;
-  }
-  .about-tag {
-    width: auto;
-    padding: 0 12px;
-  }
-  .logo-track img {
-    height: 35px;
-    margin: 0 0.5rem;
+  .about-logo-text {
+    margin-bottom: 30px;
   }
 }

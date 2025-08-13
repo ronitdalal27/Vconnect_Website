@@ -25,6 +25,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  margin-top: 40px;
 }
 
 /* ✅ Heading */
@@ -124,6 +125,17 @@
   margin: 0 auto;
 }
 
+/* 💻 Large Screens / Desktops */
+@media (min-width: 1200px) {
+  .contact-section {
+    padding: 60px 40px;
+  }
+
+  .contact-heading {
+    font-size: 50px;
+  }
+}
+
 /* 📱 Mobile First Adjustments */
 @media (max-width: 480px) {
   .contact-section {
@@ -155,9 +167,10 @@
 }
 
 /* 📱📲 Small Tablets */
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: 300px) and (max-width: 768px) {
   .contact-section {
     padding: 40px 20px;
+    padding-top: 60px;
   }
 
   .contact-heading {
@@ -177,13 +190,3 @@
   }
 }
 
-/* 💻 Large Screens / Desktops */
-@media (min-width: 1200px) {
-  .contact-section {
-    padding: 60px 40px;
-  }
-
-  .contact-heading {
-    font-size: 50px;
-  }
-}

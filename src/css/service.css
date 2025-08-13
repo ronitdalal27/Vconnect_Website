@@ -33,6 +33,7 @@
   font-family: var(--font-1);
   font-size: 14px;
   font-weight: 500;
+  margin-top: 30px;
 }
 .services-heading {
   color: var(--white-solid);
@@ -74,7 +75,8 @@
 /* Card (same size as your team cards) */
 .service-card {
   width: 323.33px;        /* same as team-card */
-  height: 460px;         /* same as team-card */
+  height: 460px;  
+  min-width: 321px;       /* same as team-card */
   border-radius: 8px;
   border: 1px solid var(--grey-13);
   position: relative;
@@ -155,8 +157,6 @@
 }
 
 
-
-
 /* Heading left aligned and matches your typography */
 .service-card-heading {
   color: var(--white-solid);
@@ -177,26 +177,38 @@
   transform: translateY(-4px);
 }
 
-/* Responsive: on smaller screens show 1 or 2 columns */
-@media (max-width: 1100px) {
-  .services-cards-grid { gap: 20px; }
-}
-@media (max-width: 900px) {
-  .service-card { width: calc(50% - 20px); }
-}
-@media (max-width: 600px) {
-  .service-card { width: 100%; }
-}
 /* Large desktops / wide screens */
 @media (min-width: 1400px) {
   .services-cards-grid {
-    gap: 40px; /* more breathing space on huge screens */
-    max-width: 1400px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
   .service-card {
     width: 340px; /* slightly wider on big screens */
     height: 480px;
   }
+}
+
+/* Responsive: on smaller screens show 1 or 2 columns */
+@media (max-width: 1100px) {
+  .services-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
 }
 
 /* Tablets in portrait and smaller laptops */
@@ -208,6 +220,33 @@
   .service-card-image {
     height: 280px;
   }
+
+  .services-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
+}
+
+@media (max-width: 900px) {
+  .service-card { width: calc(50% - 20px); }
+  .services-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
 }
 
 /* Small tablets & large phones */
@@ -225,12 +264,40 @@
   .service-card-image {
     height: 240px;
   }
+
+  .services-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
 }
+}
+
+@media (max-width: 600px) {
+  .service-card { width: 100%; }
+  .services-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
+}
+}
+
 
 /* Very small mobile phones */
 @media (max-width: 480px) {
   .services-wrapper {
-    padding: 50px 20px;
+    padding: 70px 20px;
   }
   .services-heading {
     font-size: 26px;
@@ -250,4 +317,23 @@
     font-size: 12px;
     padding: 0 10px;
   }
+
+  .services-tag{
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .services-cards-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  position: relative;
 }
+}
+
+

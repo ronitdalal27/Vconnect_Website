@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/appointmentsetting.css";
-import LeadHero from "../images/service2.png"; // <- replace with your hero image
 
 function AppointmentSetting() {
   const navigate = useNavigate();
@@ -48,34 +47,6 @@ function AppointmentSetting() {
   return (
     <main className="lg-page">
       <div className="lg-top-wrapper">
-        <div
-          className="lg-back"
-          onClick={() => navigate("/service")}
-          role="button"
-          tabIndex={0}
-          aria-label="Go back to services"
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") navigate("/service");
-          }}
-        >
-          <span className="lg-back-icon" aria-hidden="true">
-            {/* SVG */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="13"
-              height="11"
-              viewBox="0 0 13 11"
-              fill="none"
-            >
-              <path
-                d="M12.7501 5.5C12.7501 5.69891 12.6711 5.88968 12.5304 6.03033C12.3898 6.17098 12.199 6.25 12.0001 6.25H2.8126L6.0326 9.46938C6.1735 9.61027 6.25265 9.80137 6.25265 10.0006C6.25265 10.1999 6.1735 10.391 6.0326 10.5319C5.89171 10.6728 5.70061 10.7519 5.50135 10.7519C5.3021 10.7519 5.111 10.6728 4.9701 10.5319L0.470103 6.03188C0.400183 5.9622 0.344705 5.8794 0.306851 5.78824C0.268997 5.69708 0.249512 5.59934 0.249512 5.50063C0.249512 5.40192 0.268997 5.30418 0.306851 5.21301C0.344705 5.12185 0.400183 5.03905 0.470103 4.96938L4.9701 0.469376C5.03987 0.399611 5.12269 0.34427 5.21384 0.306514C5.30499 0.268758 5.40269 0.249325 5.50135 0.249325C5.60002 0.249325 5.69771 0.268758 5.78886 0.306514C5.88002 0.34427 5.96284 0.399611 6.0326 0.469376C6.10237 0.53914 6.15771 0.621963 6.19546 0.713115C6.23322 0.804267 6.25265 0.901963 6.25265 1.00063C6.25265 1.09929 6.23322 1.19698 6.19546 1.28814C6.15771 1.37929 6.10237 1.46211 6.0326 1.53188L2.8126 4.75H12.0001C12.199 4.75 12.3898 4.82902 12.5304 4.96967C12.6711 5.11032 12.7501 5.30109 12.7501 5.5Z"
-                fill="#CCCCCC"
-              />
-            </svg>
-          </span>
-          <span className="lg-back-text">Go back</span>
-        </div>
-
         {/* absolute pill that sits below the back link */}
         <div className="lg-pill">Appointment Setting</div>
       </div>
@@ -88,16 +59,14 @@ function AppointmentSetting() {
           Unlock a Steady Stream of High-Quality Leads
         </h3>
         <p className="lg-subtitle">
-          Transform your business growth with vConnect iDees' expert lead
-          generation services, designed to connect you with prospects who are
-          ready to engage.
+          Transform your business growth with vConnect iDees' expert lead generation services, designed to connect you with prospects who are ready to engage.
         </p>
       </div>
 
       {/* RIGHT - Image */}
       <div className="lg-hero-left">
         <img
-          src={LeadHero}
+          src="/images/service2.png"
           alt="Lead Generation Hero"
           className="lg-hero-image"
         />

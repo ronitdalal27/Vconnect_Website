@@ -108,7 +108,7 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  justify-content: center;
+  justify-content: left;
   align-items: flex-start;
   gap: 20px;
   flex: 1;
@@ -220,6 +220,19 @@
     text-align: center;
     width: 100%;
   }
+/* new line added */
+  /* ✅ Keep Impact section left-aligned */
+  .case-slide-impact {
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+  }
+
+  .case-slide-impact ul {
+    margin-left: 15px; /* keep bullet indentation */
+  }
+/* 
+  new line end */
 }
 
 /* Tablets portrait and large mobiles */
@@ -246,6 +259,10 @@
   .case-study-carousel-wrapper {
     margin-top: 30px;
   }
+
+  .case-slide-impact {
+    justify-content: left;
+  }
 }
 
 /* Small mobile */
@@ -253,6 +270,11 @@
   .case-study {
     padding: 50px 10px;
   }
+
+  .case-slide-impact {
+    justify-content: left;
+  }
+
 
   .case-slide-image {
     max-width: 100%;

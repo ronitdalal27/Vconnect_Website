@@ -1,22 +1,15 @@
 import React, { useState, useEffect } from "react";
 import "../css/ourteam.css";
-import DhirajImage from "../images/DhirajSir.png";
-import HemantImage from "../images/HemantSir.png";
-import AshishImage from "../images/AshishSir1.png";
-import MuskanImage from "../images/MuskanMam.png";
-import AniketImage from "../images/AnkitSir.png";
-import ArpanImage from "../images/Arpan.png";
-import MehrishiImage from "../images/MehrishiMam.png";
 
 // Existing array for cards (unchanged)
 const teamMembers = [
-  { name: "Hemant Ghale", designation: "Founder & Director", image: HemantImage, linkedin: "https://www.linkedin.com/in/hemantghale/" },
-  { name: "Dhiraj Umate", designation: "Head of Operations, India", image: DhirajImage, linkedin: "https://www.linkedin.com/in/dhiraj-umate-3819b9ab/" },
-  { name: "Ashish Yadav", designation: "Heading Team & Client Engagement Head", image: AshishImage, linkedin: "https://www.linkedin.com/in/ashish-yadav-7b9701103/" },
-  { name: "Muskan Nigam", designation: "Team Leader & Project Coordinator", image: MuskanImage, linkedin: "https://www.linkedin.com/in/muskan-nigam-717aaa1b3/" },
-  { name: "Ankit Kharatmal", designation: "Business Development Manager", image: AniketImage, linkedin: "https://www.linkedin.com/in/ankit-kharatmal-359815140/" },
-  { name: "Mehrishi Tiwari", designation: "HR Manager", image: MehrishiImage, linkedin: "https://www.linkedin.com/in/mehrishi-tiwari-a2b191237/" },
-  { name: "Arpan Chavan", designation: "UI UX Designer", image: ArpanImage, linkedin: "https://www.linkedin.com/in/arpan-chavan/" },
+  { name: "Hemant Ghale", designation: "Founder & Director", image:"/images/HemantSir.png", linkedin: "https://www.linkedin.com/in/hemantghale/" },
+  { name: "Dhiraj Umate", designation: "Head of Operations, India", image:"/images/DhirajSir.png", linkedin: "https://www.linkedin.com/in/dhiraj-umate-3819b9ab/" },
+  { name: "Ashish Yadav", designation: "Heading Team & Client Engagement Head", image:"/images/AshishSir1.png", linkedin: "https://www.linkedin.com/in/ashish-yadav-7b9701103/" },
+  { name: "Muskan Nigam", designation: "Team Leader & Project Coordinator", image:"/images/MuskanMam.png", linkedin: "https://www.linkedin.com/in/muskan-nigam-717aaa1b3/" },
+  { name: "Ankit Kharatmal", designation: "Business Development Manager", image:"/images/AnkitSir.png", linkedin: "https://www.linkedin.com/in/ankit-kharatmal-359815140/" },
+  { name: "Mehrishi Tiwari", designation: "HR Manager", image:"/images/MehrishiMam.png", linkedin: "https://www.linkedin.com/in/mehrishi-tiwari-a2b191237/" },
+  { name: "Arpan Chavan", designation: "UI UX Designer", image:"/images/Arpan.png", linkedin: "https://www.linkedin.com/in/arpan-chavan/" },
 ];
 
 // NEW: Detailed bio content for overlay
@@ -219,7 +212,6 @@ function OurTeam() {
         </div>
       </div>
     )}
-
     </section>
   );
 }
