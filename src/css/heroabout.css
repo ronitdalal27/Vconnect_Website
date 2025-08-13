@@ -206,6 +206,11 @@
   .about-logo-text {
     margin-bottom: 30px;
   }
+
+  .about-tag {
+    margin-top:  30px; /* reduced for smaller screens */
+
+  }
   
 }
 
@@ -227,7 +232,7 @@
     margin: 0 0.8rem;
   }
 
-  .about-logo-text {
-    margin-bottom: 30px;
+  .about-tag {
+    margin-top: 30px;
   }
 }

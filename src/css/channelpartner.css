@@ -125,6 +125,25 @@
   margin: 0 auto;
 }
 
+/* 📱 Tablet responsiveness */
+@media (max-width: 786px) {
+  .form-row {
+    flex-direction: column;
+    gap: 18px;
+  }
+  .form-group {
+    min-width: 100%;
+  }
+  .submit-btn {
+    max-width: 100%;
+  }
+
+  .channel-partner-tag{
+      margin-bottom: 20px;
+  margin-top: 50px;
+  }
+}
+
 /* 📱 Mobile responsiveness */
 @media (max-width: 480px) {
   .form-row {
@@ -137,13 +156,17 @@
   .submit-btn {
     max-width: 100%;
   }
+  .channel-partner-tag{
+      margin-bottom: 20px;
+  margin-top: 70px;
+  }
 }
 
-/* 📱 Tablet responsiveness */
-@media (max-width: 768px) {
+/* 📱 Mobile responsiveness */
+@media (max-width: 300px) {
   .form-row {
     flex-direction: column;
-    gap: 18px;
+    gap: 16px;
   }
   .form-group {
     min-width: 100%;
@@ -151,14 +174,10 @@
   .submit-btn {
     max-width: 100%;
   }
+  .channel-partner-tag{
+      margin-bottom: 20px;
+  margin-top: 70px;
+  }
 }
 
-/* 💻 Large desktop screens */
-@media (min-width: 1400px) {
-  .channel-partner-form {
-    max-width: 900px;
-  }
-  .submit-btn {
-    max-width: 900px;
-  }
-}
+
